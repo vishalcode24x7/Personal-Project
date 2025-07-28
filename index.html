@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="icon" href="icon.svg" type="image"> -->
+    <title>- TextAura </title>
+</head>
+
+<body>
+    <header class="header-body">
+        <nav class="nav-bar">
+            <div class="logo">
+                <img class="logo-pick" src="Logo.png" width="90">
+                <h1>TextAura</h1>
+            </div>
+            <ul>
+                <li><span>Home</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                        color="#ffffff" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></li>
+                <li><span>Symboles</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24" color="#ffffff" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></li>
+                <li><span>QR code</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                        height="24" color="#ffffff" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></li>
+                <li><span>About</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                        color="#ffffff" fill="none">
+                        <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-body">
+        <div class="container">
+            <h1>Cool Font <span class="auto-type"></span></h1>
+            <textarea id="userInput" placeholder="Type your text here..." cols="40" rows="3"></textarea>
+
+            <h2>Generated Text</h2>
+            <div id="outputFonts">
+                <!-- Converted fonts will be injected here -->
+            </div>
+        </div>
+    </main>
+    <footer class="footer-body"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
