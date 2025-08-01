@@ -33,14 +33,14 @@ const squareMap = {
     M: '🄼', N: '🄽', O: '🄾', P: '🄿', Q: '🅀', R: '🅁',
     S: '🅂', T: '🅃', U: '🅄', V: '🅅', W: '🅆', X: '🅇',
     Y: '🅈', Z: '🅉',
-     '0': '🄌', '1': '➊', '2': '➋', '3': '➌', '4': '➍',
-  '5': '➎', '6': '➏', '7': '➐', '8': '➑', '9': '➒'
+    '0': '🄌', '1': '➊', '2': '➋', '3': '➌', '4': '➍',
+    '5': '➎', '6': '➏', '7': '➐', '8': '➑', '9': '➒'
 };
 
 
 // Font style functions
 const fontStyles = {
-    bold: str => str.replace(/[A-Za-z]/g, c => {
+    bold: str => str.replace(/[A-Za-z0-9]/g, c => {
         const code = c.charCodeAt(0);
         if (c >= 'A' && c <= 'Z') {
             return String.fromCodePoint(0x1D400 + (code - 65)); // 'A' to 'Z'
@@ -78,7 +78,7 @@ function renderOutput(text) {
 
         button.addEventListener('click', () => {
             navigator.clipboard.writeText(converted);
-            button.style.backgroundColor = 'green';
+            button.style.backgroundColor = 'rgba(60, 163, 53, 1)';
             button.style.color = 'white';
             button.textContent = 'Copied!';
             setTimeout(() => {
@@ -105,3 +105,9 @@ input.addEventListener('input', () => {
 // ⏱️ Initial render when page loads
 renderOutput(input.value);
 
+ const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
