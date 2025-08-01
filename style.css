@@ -258,4 +258,7 @@ body {
     .main-body .container .output-block strong{
         font-size: 13px;
     }
+    body{
+        background-color: red;
+    }
 }
