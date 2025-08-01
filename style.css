@@ -48,7 +48,7 @@ body {
     color: rgb(32, 248, 4);
     font-weight: bold;
     font-size: 40px;
-    margin-left: 70px;
+    margin-left: 50px;
 
 }
 
@@ -87,20 +87,16 @@ body {
 
 .main-body {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     height: 100vh;
-    /* Adjust height based on nav-bar */
     padding-top: 25px;
     color: black;
 }
 
 .main-body .container {
     text-align: center;
-    width: 40vw;
+    width: 50vw;
     padding: 30px;
-    /* border: 1px solid black; */
-
 }
 
 .main-body .container #userInput {
@@ -113,7 +109,7 @@ body {
     border-radius: 40px;
     border: 2px solid #000000;
     box-shadow: 0 0 15px rgb(5, 5, 5);
-    padding-top: 18px;
+    padding-top: 15px;
     overflow-x: auto;
     outline: none;
 }
@@ -134,26 +130,24 @@ body {
     border: 2px solid #0c0c0c;
     margin-top: 10px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     box-shadow: 0 0 15px rgb(5, 5, 5);
     box-sizing: border-box;
-    /* overflow: scroll; */
 }
 
 .main-body .container #outputFonts span {
     height: 25px;
     width: 300px;
     position: relative;
-    /* min-height: 1px; */
-    padding-left: 5px;
-    padding-right: 5px;
     display: inline-block;
     max-width: 300px;
-    /* set your desired width */
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    /* Firefox */
+    font-size: 14px;
+    margin-top: 5px;
     -ms-overflow-style: none;
 }
 
@@ -171,12 +165,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0;
-    background: #f2f2f2;
+    margin: 5px 0;
+    background: #cbedcd;
     padding: 10px;
     border-radius: 6px;
     font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
 }
+
 
 .copy-btn {
     cursor: pointer;
@@ -197,7 +192,7 @@ body {
 }
 
 .copy-btn:hover {
-    background: #555;
+    background: #080808;
 }
 
 /* Hamburger menu */
@@ -219,6 +214,9 @@ body {
         display: none;
     }
 
+    .nav-bar h1{
+        margin-left: 0px;
+    }
     .nav-links.active {
         display: flex;
     }
@@ -238,6 +236,7 @@ body {
         cursor: pointer;
         filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
     }
+    
 
 }
 
@@ -247,7 +246,7 @@ body {
         margin-left: 0px;
     }
     .main-body .container{
-        width: 90vw;
+        width: 95vw;
     }
     .main-body .container h1{
         font-size: 25px;
@@ -256,6 +255,14 @@ body {
         font-size: 20px;
     }
     .main-body .container .output-block strong{
-        font-size: 13px;
+        font-size: 12px;
     }
+    .main-body .container .output-block span{
+        font-size: 19px;
+    }
+    .main-body .container #userInput{
+        height: 50px;
+        padding-top: 10px;
+    }
+    
 }
