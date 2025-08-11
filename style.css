@@ -29,20 +29,6 @@ body {
     top: 0;
 }
 
-/* .nav-bar .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    padding-left: 20px;
-} */
-
-/* .nav-bar .logo-pick {
-    border-radius: 50%;
-    border: 2px solid green; 
-    box-shadow: 0 0 15px green;
-} */
-
 .nav-bar h1 {
     font-family: 'Arial', sans-serif;
     color: rgb(32, 248, 4);
@@ -227,7 +213,7 @@ body {
 
     .main-body .container {
         text-align: center;
-        width: 75vw;
+        width: 80vw;
         padding: 30px;
         /* border: 1px solid black; */
     }
@@ -246,7 +232,8 @@ body {
         margin-left: 0px;
     }
     .main-body .container{
-        width: 95vw;
+        padding: 15px;
+        width: 100vw;
     }
     .main-body .container h1{
         font-size: 25px;
