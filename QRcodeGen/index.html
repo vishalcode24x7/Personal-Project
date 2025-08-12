@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="icon" href="icon.svg" type="image"> -->
-    <title>- TextAura </title>
+    <title>QR code generator</title>
 </head>
 
 <body>
@@ -27,8 +26,8 @@
                         <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg></li>
-                <li><a href="\QRcodeGen\index.html">QR code</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                        height="24" color="#ffffff" fill="none">
+                <li><a href="\QRcodeGen\index.html">QR code</a><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
                         <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg></li>
@@ -41,21 +40,30 @@
             <div class="hamburger">&#9776;</div>
         </nav>
     </header>
-    <main class="main-body">
+    <main class="box">
         <div class="container">
-            <h1>Cool Font <span class="auto-type"></span></h1>
-            <textarea id="userInput" placeholder="Type your text here...✍️" cols="40" rows="3"></textarea>
-
-            <h2>Generated Text</h2>
-            <div id="outputFonts">
-                <!-- Converted fonts will be injected here -->
+            <h1>QR Code Generator</h1>
+            <input type="text" placeholder="Enter your text or URL" id="qr-text">
+            <div class="selector">
+                <label for="sizes">Select sizes</label>
+                <select id="sizes">
+                    <option value="100">100*100</option>
+                    <option value="200">200*200</option>
+                    <option value="300">300*300</option>
+                </select>
             </div>
+        
+
+        <div class="qr-body"></div>
+
+        <div class="qr-footer">
+            <a href="" id="generateBtn">Generator</a>
+            <a href="" id="downloadBtn" download="QR_code.png">Download</a>
+        </div>
         </div>
     </main>
-    <footer class="footer-body"></footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
 
 </html>

@@ -402,6 +402,8 @@ const fontStyles = {
 
     darkPulse: str => `😾☟  ${str}  ♞😈`
 }
+
+
 function renderOutput(text) {
     output.innerHTML = '';
 

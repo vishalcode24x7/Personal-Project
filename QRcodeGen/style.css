@@ -1,0 +1,238 @@
+:root {
+    --bcg-clr: #05203c;
+    --primary-clr: #0a021c;
+    --br-r: 8px;
+    --secondry-clr: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    position: sticky;
+    align-items: center;
+    top: 0;
+    width: 100%;
+}
+
+.nav-bar h1 {
+    font-family: 'Arial', sans-serif;
+    color: rgb(32, 248, 4);
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 50px;
+
+}
+
+.nav-bar .nav-links {
+    list-style: none;
+    gap: 30px;
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-bar .nav-links li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar .nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-bar ul li svg {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+
+.nav-bar ul li:hover {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
+}
+
+
+body {
+    background: #27507c;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+}
+
+.box {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.box .container {
+    background-color: var(--primary-clr);
+    margin-top: 30px;
+    padding: 30px;
+    width: 450px;
+    border-radius: var(--br-r);
+    box-shadow: 0 0 20px rgb(202, 208, 238);
+    padding-top: 35px;
+}
+
+.container h1 {
+    font-size: 26px;
+    text-align: center;
+    color: var(--secondry-clr);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    box-shadow: 0px 3px 4px rgb(0, 4, 255), 0px 0px 5px rgb(255, 60, 1);
+}
+
+.container input {
+    width: 100%;
+    margin-block: 12px;
+}
+
+.container input,
+select {
+    padding: 8px;
+    border-radius: var(--br-r);
+    font-size: 18px;
+    outline: none;
+    border: 2px solid black;
+}
+
+.container select {
+    margin-left: 10px;
+}
+
+.container .selector {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container label {
+    color: var(--secondry-clr);
+    font-size: 20px;
+}
+
+.container #sizes {
+    margin-left: 100px;
+}
+
+.qr-footer a {
+    background-color: var(--secondry-clr);
+    font-size: 20px;
+    padding: 14px 36px;
+    margin-inline: 12px;
+    text-decoration: none;
+    color: var(--primary-clr);
+    font-weight: 600;
+    border-radius: var(--br-r);
+}
+
+.qr-footer a:hover {
+    background-color: #11d05e;
+}
+
+.qr-footer {
+
+    display: flex;
+    justify-content: center;
+}
+
+.qr-body {
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.qr-body img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-block: 10px;
+    padding: 20px;
+    border: 2px solid red;
+    border-radius: var(--br-r);
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 950px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #000000;
+        flex-direction: column;
+        width: 300px;
+        padding: 1rem;
+        display: none;
+    }
+
+    .nav-bar h1 {
+        margin-left: 0px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 450px) {
+    .box .container {
+        margin-top: 50px;
+        width: 350px;
+        /* background-color: red; */
+    }
+
+    .container #sizes {
+        margin-left: 0px;
+    }
+
+    .qr-footer a {
+        background-color: var(--secondry-clr);
+        font-size: 20px;
+        padding: 10px 20px;
+        margin-inline: 4px;
+    }
+    .qr-body{
+        padding: 5px;
+    }
+    .qr-body img {
+        padding: 5px;
+    }
+}

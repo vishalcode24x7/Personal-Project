@@ -6,7 +6,7 @@
 }
 
 body {
-    background: rgb(107, 203, 100);
+    background: #77bb64;
     background-size: cover;
     background-attachment: fixed;
     /* Keeps background in place during scroll */
