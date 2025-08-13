@@ -1,0 +1,65 @@
+/* Base styling */
+#about {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Heading */
+#about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+  position: relative;
+}
+
+#about h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #ff4d6d;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Paragraphs */
+#about p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Links */
+#about a {
+  color: #ff4d6d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#about a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #about {
+    padding: 20px;
+  }
+
+  #about h2 {
+    font-size: 1.8rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+}
