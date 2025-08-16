@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="style.css">
     <title>About</title>
 </head>
 
 <body>
-    <nav class="nav-bar">
+    <header>
+        <nav class="nav-bar">
             <div class="logo">
                 <!-- <img class="logo-pick" src="image.jpg" width="70"> -->
                 <h1>TextAura</h1>
@@ -26,8 +26,8 @@
                         <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg></li>
-                <li><a href="index2.html">QR code</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
-                        height="24" color="#ffffff" fill="none">
+                <li><a href="qrcode.html">QR code</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        width="24" height="24" color="#ffffff" fill="none">
                         <path d="M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9" stroke="#ffffff"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg></li>
@@ -39,6 +39,7 @@
             </ul>
             <div class="hamburger">&#9776;</div>
         </nav>
+    </header>
     <section id="about">
         <h2>About TextAura</h2>
         <p>
@@ -64,10 +65,21 @@
         </p>
         <p>
             Got feedback, ideas, or just want to say hi? Connect with us on <a href="https://Instagram.com/vishal.code_"
-                target="_blank">Instagram</a> or drop a message — we’re always listening. Let’s make the web a little more
+                target="_blank">Instagram</a> or drop a message — we’re always listening. Let’s make the web a little
+            more
             stylish, one font at a time.
         </p>
     </section>
+
+    <script>
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>

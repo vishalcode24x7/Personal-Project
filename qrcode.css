@@ -9,7 +9,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
 }
 
 .nav-bar {
@@ -19,15 +26,13 @@
     padding: 10px 30px;
     background-color: rgb(0, 0, 0);
     color: #fff;
-    position: sticky;
     align-items: center;
-    top: 0;
     width: 100%;
 }
 
 .nav-bar h1 {
     font-family: 'Arial', sans-serif;
-    color: rgb(32, 248, 4);
+    color: #a14af7;
     font-weight: bold;
     font-size: 40px;
     margin-left: 50px;
@@ -74,7 +79,7 @@
 
 
 body {
-    background: #27507c;
+    background: #a14af7;
     background-size: cover;
     background-attachment: fixed;
     margin: 0;
@@ -89,12 +94,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 80px;
 }
 
 
 .box .container {
     background-color: var(--primary-clr);
-    margin-top: 30px;
+    margin-top: 80px;
     padding: 30px;
     width: 450px;
     border-radius: var(--br-r);
