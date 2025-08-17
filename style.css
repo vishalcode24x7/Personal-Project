@@ -6,7 +6,7 @@
 }
 
 body {
-    background: rgb(96, 230, 79);
+    background: rgb(207, 243, 203);
     background-size: cover;
     background-attachment: fixed;
     /* Keeps background in place during scroll */
@@ -156,7 +156,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
-    background: #cbedcd;
+    background: #fefffe;
     padding: 10px;
     border-radius: 6px;
     font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
