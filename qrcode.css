@@ -9,10 +9,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;;
+    font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
+    ;
 }
 
-header{
+header {
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -32,7 +33,7 @@ header{
 
 .nav-bar h1 {
     font-family: 'Arial', sans-serif;
-    color: #a14af7;
+    color: rgb(161, 74, 247);
     font-weight: bold;
     font-size: 40px;
     margin-left: 50px;
@@ -65,16 +66,9 @@ header{
     transition: color 0.3s ease;
 }
 
-.nav-bar ul li svg {
-    width: 28px;
-    height: 28px;
-    margin-right: 5px;
-    margin-top: 3px;
-}
-
 .nav-bar ul li:hover {
     cursor: pointer;
-    filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
+    filter: brightness(0) saturate(400%) invert(50%) sepia(200%) saturate(846%) hue-rotate(210deg) brightness(103%) contrast(101%);
 }
 
 
@@ -193,16 +187,24 @@ select {
     cursor: pointer;
 }
 
+
+
 @media (max-width: 950px) {
     .nav-links {
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
         background-color: #000000;
         flex-direction: column;
-        width: 300px;
+        width: 200px;
         padding: 1rem;
         display: none;
+    }
+
+    .nav-bar .nav-links li {
+        padding: 5px;
+        border-bottom: 1px solid #afa1a1;
+        border-radius: 5px;
     }
 
     .nav-bar h1 {
@@ -219,6 +221,11 @@ select {
 }
 
 @media (max-width: 450px) {
+    .nav-bar h1 {
+        font-size: 30px;
+        margin-left: 0px;
+    }
+
     .box .container {
         margin-top: 50px;
         width: 350px;
@@ -235,9 +242,11 @@ select {
         padding: 10px 20px;
         margin-inline: 4px;
     }
-    .qr-body{
+
+    .qr-body {
         padding: 5px;
     }
+
     .qr-body img {
         padding: 5px;
     }

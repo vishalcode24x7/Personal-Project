@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;;
+  font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
+  ;
 }
 
 header {
@@ -69,7 +70,7 @@ header {
 
 .nav-bar ul li:hover {
   cursor: pointer;
-  filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
+  filter: brightness(0) saturate(400%) invert(45%) sepia(190%) saturate(646%) hue-rotate(149deg) brightness(100%) contrast(101%);
 }
 
 .hamburger {
@@ -136,13 +137,20 @@ body {
 @media (max-width: 950px) {
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 0;
     background-color: #000000;
     flex-direction: column;
-    width: 300px;
+    width: 200px;
     padding: 1rem;
     display: none;
+  }
+ 
+  
+  .nav-bar .nav-links li {
+    padding: 5px;
+    border-bottom: 1px solid #afa1a1;
+    border-radius: 5px;
   }
 
   .nav-bar h1 {
@@ -158,7 +166,12 @@ body {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 450px) {
+  .nav-bar h1 {
+    font-size: 30px;
+    margin-left: 0px;
+  }
+
   #about {
     padding: 20px;
     margin: 100px 20px 20px 20px;

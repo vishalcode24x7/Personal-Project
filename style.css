@@ -17,12 +17,13 @@ body {
     width: 100vw;
 }
 
-header{
+header {
     position: fixed;
     width: 100%;
     z-index: 1000;
     top: 0;
 }
+
 .nav-bar {
     display: flex;
     align-items: center;
@@ -63,13 +64,6 @@ header{
     transition: color 0.3s ease;
 }
 
-.nav-bar ul li svg {
-    width: 28px;
-    height: 28px;
-    margin-right: 5px;
-    margin-top: 5px;
-}
-
 .nav-bar ul li:hover {
     cursor: pointer;
     filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
@@ -78,7 +72,9 @@ header{
 
 .main-body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
     height: 100vh;
     padding-top: 25px;
     position: relative;
@@ -128,6 +124,7 @@ header{
     padding: 10px;
     box-shadow: 0 0 15px rgb(5, 5, 5);
     box-sizing: border-box;
+
 }
 
 .main-body .container #outputFonts span {
@@ -195,16 +192,58 @@ header{
     cursor: pointer;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+a.button {
+    padding: 5px 10px;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #000000;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+a.button:hover {
+    background-color: #494e48;
+}
+
+.main-body footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    align-items: baseline;
+    width: 100%;
+}
+
+
 @media (max-width: 950px) {
     .nav-links {
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
         background-color: #000000;
         flex-direction: column;
-        width: 300px;
+        width: 200px;
         padding: 1rem;
         display: none;
+    }
+
+    .nav-bar .nav-links li {
+        padding: 5px;
+        border-bottom: 1px solid #afa1a1;
+        border-radius: 5px;
     }
 
     .nav-bar h1 {
@@ -226,11 +265,9 @@ header{
         /* border: 1px solid black; */
     }
 
-    .nav-bar ul li:hover {
-        cursor: pointer;
-        filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
-    }
-
+.main-body footer{
+    padding: 15px;
+}
 
 }
 
@@ -264,6 +301,15 @@ header{
     .main-body .container #userInput {
         height: 50px;
         padding-top: 10px;
+    }
+
+    .main-body footer {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+        align-items: baseline;
+        width: 100%;
     }
 
 }
