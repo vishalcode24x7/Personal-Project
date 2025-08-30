@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
+    
 }
 
 body {
@@ -69,6 +70,12 @@ header {
     filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
 }
 
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
 
 .main-body {
     display: flex;
@@ -87,6 +94,7 @@ header {
     width: 50vw;
     padding: 30px;
 }
+
 
 .main-body .container #userInput {
     width: 100%;
@@ -175,11 +183,6 @@ header {
     text-align: center;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
 
 .copy-btn:hover {
     background: #080808;

@@ -93,7 +93,7 @@ body {
 
 .box .container {
     background-color: var(--primary-clr);
-    margin-top: 80px;
+    /* margin-top: 50px; */
     padding: 30px;
     width: 450px;
     border-radius: var(--br-r);
@@ -226,7 +226,6 @@ select {
     }
 
     .box .container {
-        margin-top: 50px;
         width: 350px;
         /* background-color: red; */
     }

@@ -1,3 +1,4 @@
+//code for auto type
 var typed = new Typed('.auto-type', {
     strings: ["Converter", "Generator", "Designer", "Maker", "Creator", "Artist", "Innovator", "Builder", "Engineer"],
     typeSpeed: 20,
@@ -403,7 +404,7 @@ const fontStyles = {
     darkPulse: str => `😾☟  ${str}  ♞😈`
 }
 
-
+//code for print output
 function renderOutput(text) {
     output.innerHTML = '';
 
@@ -423,6 +424,7 @@ function renderOutput(text) {
         button.className = 'copy-btn';
         button.textContent = 'Copy';
 
+        //code for copy button
         button.addEventListener('click', () => {
             navigator.clipboard.writeText(converted);
             button.style.backgroundColor = 'rgba(60, 163, 53, 1)';

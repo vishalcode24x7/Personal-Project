@@ -1,9 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
 }
+
 header {
     position: fixed;
     width: 100%;
@@ -24,10 +25,11 @@ header {
 
 .nav-bar h1 {
     font-family: 'Arial', sans-serif;
-    color: rgb(161, 74, 247);
+    color: rgb(248, 138, 4);
     font-weight: bold;
     font-size: 40px;
     margin-left: 50px;
+    margin-bottom: 0px;
 
 }
 
@@ -37,12 +39,6 @@ header {
     padding-right: 20px;
     font-size: 18px;
     font-weight: 600;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
 }
 
 .nav-bar .nav-links li {
@@ -59,18 +55,85 @@ header {
 
 .nav-bar ul li:hover {
     cursor: pointer;
-    filter: brightness(0) saturate(400%) invert(50%) sepia(200%) saturate(846%) hue-rotate(210deg) brightness(103%) contrast(101%);
+    filter: brightness(0) saturate(60%) invert(50%) sepia(80%) saturate(600%) hue-rotate(350deg) brightness(110%) contrast(100%);
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
 .hamburger {
     display: none;
-    font-size: 2rem;
+    font-size: 2em;
     cursor: pointer;
 }
 
-.h h1:last-child {
-    margin-top: 80px;
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #f0b17a;
+    text-align: center;
 }
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+.entity-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 0.4rem;
+}
+
+.entity {
+    font-size: 25px;
+    background: white;
+    border: 1px solid #000000;
+    padding: 0.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    min-width: 50px;
+    transition: background 0.2s;
+}
+
+.entity:hover {
+    background: #e0f7fa;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.entity.copied .tooltip {
+    opacity: 1;
+}
+
+main {
+    width: 100%;
+    margin-top: 80px;
+    padding: 25px;
+}
+
+
+
 @media (max-width: 950px) {
     .nav-links {
         position: absolute;
@@ -99,5 +162,26 @@ header {
 
     .hamburger {
         display: block;
+    }
+}
+
+@media (max-width: 450px) {
+    .nav-bar h1 {
+        font-size: 30px;
+        margin-left: 0px;
+    }
+    main h1{
+        font-size: 25px;
+    }
+    main{
+        padding: 10px
+    }
+    .entity-grid{
+        justify-content: center;
+        gap: 0.2rem;
+    }
+    .entity {
+        font-size: 25px;
+        min-width: 40px;
     }
 }
