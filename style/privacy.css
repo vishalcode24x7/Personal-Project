@@ -1,0 +1,59 @@
+/* Reset & base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container */
+body {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+/* Heading */
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  body {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
