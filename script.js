@@ -14,6 +14,32 @@ const output = document.getElementById('outputFonts');
 const copyButton = document.querySelector('.copy-btn');
 
 
+const siteURL = encodeURIComponent("https://yourdomain.com"); // Replace with your actual URL
+const siteText = encodeURIComponent("Check out this cool font converter!");
+
+function shareTo(platform) {
+    let shareURL = "";
+    switch (platform) {
+        case "whatsapp":
+            shareURL = `https://wa.me/?text=${siteText}%20${siteURL}`;
+            break;
+        case "telegram":
+            shareURL = `https://t.me/share/url?url=${siteURL}&text=${siteText}`;
+            break;
+        case "instagram":
+            shareURL = `https://www.instagram.com`;
+            alert("Instagram doesn't support direct link sharing. Paste the link in your bio or DM.");
+            break;
+    }
+    window.open(shareURL, "_blank");
+}
+
+function copyLink() {
+    navigator.clipboard.writeText("https://yourdomain.com");
+    alert("Link copied to clipboard!");
+}
+
+
 //Styling output fonts
 const bubbleMap = {
     a: 'ⓐ', b: 'ⓑ', c: 'ⓒ', d: 'ⓓ', e: 'ⓔ', f: 'ⓕ', g: 'ⓖ',

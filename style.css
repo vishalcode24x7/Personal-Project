@@ -3,7 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
-    
+
 }
 
 body {
@@ -206,6 +206,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 2;
 }
 
 a.button {
@@ -230,6 +231,71 @@ a.button:hover {
     width: 100%;
 }
 
+
+.share-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 80px;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.share-main {
+    font-size: 10px;
+    height: 60px;
+    width: 60px;
+    color: black;
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    background:  rgb(42, 206, 24);
+    border-radius: 50%;
+    text-align: center;
+}
+
+.share-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+    border-radius: 50%;
+    background: #000000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.share-wrapper:hover .share-circle {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.share-circle button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+.share-circle button:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
 
 @media (max-width: 950px) {
     .nav-links {
@@ -268,9 +334,9 @@ a.button:hover {
         /* border: 1px solid black; */
     }
 
-.main-body footer{
-    padding: 15px;
-}
+    .main-body footer {
+        padding: 15px;
+    }
 
 }
 
@@ -313,6 +379,16 @@ a.button:hover {
         font-size: 14px;
         align-items: baseline;
         width: 100%;
+    }
+
+    .scroll-buttons {
+        display: none;
+    }
+
+    .share-wrapper{
+        position: fixed;
+        bottom: 50px;
+        right: 40px;
     }
 
 }
