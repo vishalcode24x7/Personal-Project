@@ -84,10 +84,10 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.entity-grid {
+.entity-grid1, .entity-grid2, .entity-grid3, .entity-grid4 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
     gap: 0.4rem;
 }
 
@@ -131,6 +131,10 @@ main {
     width: 100%;
     margin-top: 80px;
     padding: 25px;
+}
+
+body main h3{
+    margin-top: 10px;
 }
 
 
@@ -177,10 +181,13 @@ main {
     main{
         padding: 10px
     }
-    .entity-grid{
+    .entity-grid1, .entity-grid2, .entity-grid3, .entity-grid4 {
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 0.2rem;
     }
+    
     .entity {
         font-size: 25px;
         min-width: 40px;
