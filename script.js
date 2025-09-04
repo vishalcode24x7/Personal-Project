@@ -462,7 +462,7 @@ hamburger.addEventListener('click', () => {
 });
 
 document.addEventListener('click', (e) => {
-  if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-    navLinks.classList.remove('active');
-  }
+    if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        navLinks.classList.remove('active');
+    }
 });

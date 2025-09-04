@@ -76,7 +76,7 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    background: #f0b17a;
+    background: #f0b683;
     text-align: center;
 }
 
@@ -84,10 +84,10 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.entity-grid1, .entity-grid2, .entity-grid3, .entity-grid4 {
+.symbol {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     gap: 0.4rem;
 }
 
@@ -181,7 +181,7 @@ body main h3{
     main{
         padding: 10px
     }
-    .entity-grid1, .entity-grid2, .entity-grid3, .entity-grid4 {
+    .symbol {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
