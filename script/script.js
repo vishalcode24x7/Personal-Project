@@ -1,6 +1,6 @@
 //code for auto type
 var typed = new Typed('.auto-type', {
-    strings: ["Converter", "Generator", "Designer", "Maker", "Creator", "Artist", "Innovator", "Builder", "Engineer"],
+    strings: ["Converter", "Generator", "Designer", "Maker", "Creator", "Builder", "Engin"],
     typeSpeed: 20,
     backSpeed: 50,
     backDelay: 1500,     // Wait 1 second before erasing
