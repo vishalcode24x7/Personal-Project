@@ -1,10 +1,10 @@
 //code for auto type
 var typed = new Typed('.auto-type', {
-    strings: ["Converter", "Generator", "Designer", "Maker", "Creator", "Builder", "Engin"],
-    typeSpeed: 20,
-    backSpeed: 50,
+    strings: ["Fancy Font Generator", "QR Code Generator", "Cool Symbol Selector"],
+    typeSpeed: 10,
+    backSpeed: 10,
     backDelay: 1500,     // Wait 1 second before erasing
-    startDelay: 100, // Start typing after 0.5 seconds
+    startDelay: 100, // Start typing after 0.1 seconds
     loop: true
 })
 
@@ -105,7 +105,7 @@ const fontStyles = {
         }
     }),
 
-    ScriptStyle: str => str.replace(/[A-Za-z]/g, c => {
+    Script: str => str.replace(/[A-Za-z]/g, c => {
         const code = c.charCodeAt(0);
         const patches = {
             'B': 'ℬ', // Script Capital B
@@ -126,7 +126,7 @@ const fontStyles = {
         return c;
     }),
 
-    FrakturStyle: str => str.replace(/[A-Za-z]/g, c => {
+    Fraktur: str => str.replace(/[A-Za-z]/g, c => {
         const code = c.charCodeAt(0);
 
         const patches = {
@@ -187,11 +187,11 @@ const fontStyles = {
         if (c >= '0' && c <= '9') return String.fromCodePoint(0x1D7D8 + (code - 48));
         return c;
     }),
-    WiredStyle: str => str.split('').map(c => c + '\u0336').join(''),
+    Wired: str => str.split('').map(c => c + '\u0336').join(''),
     Bubble: str => str.split('').map(c => bubbleMap[c] || c).join(''),
     Square: str => str.split('').map(c => squareMap[c.toUpperCase()] || c).join(''),
 
-    MonoStyleSafe: str => str.replace(/[A-Za-z0-9]/g, c => {
+    MonoSafe: str => str.replace(/[A-Za-z0-9]/g, c => {
         const code = c.charCodeAt(0);
         if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D670 + (code - 65));
         if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D68A + (code - 97));
@@ -229,7 +229,7 @@ const fontStyles = {
         return tiny[c] || c;
     }),
 
-    SymbolStyle: str => str.replace(/[A-Za-z0-9]/g, c => {
+    Symbol: str => str.replace(/[A-Za-z0-9]/g, c => {
         const patches = {
             'A': '∆', 'B': 'β', 'C': '©', 'D': 'ↄ', 'E': '∑',
             'F': 'ϝ', 'G': 'ɢ', 'H': '♓', 'I': 'ℹ', 'J': 'Ɉ',
@@ -244,7 +244,7 @@ const fontStyles = {
         return patches[c.toUpperCase()] || c;
     }),
 
-    FancyFontStyle: str => str.replace(/[A-Za-z0-9]/g, c => {
+    FancyFont: str => str.replace(/[A-Za-z0-9]/g, c => {
         const code = c.charCodeAt(0);
 
         const patches = {
@@ -262,7 +262,7 @@ const fontStyles = {
         return c;
     }),
 
-    CurrencyStyle: str => str.replace(/[A-Za-z0-9]/g, c => {
+    Currency: str => str.replace(/[A-Za-z0-9]/g, c => {
         const patches = {
             'A': '₳', 'B': '฿', 'C': '¢', 'D': '₫', 'E': '€',
             'F': '₣', 'G': '₲', 'H': '₴', 'I': 'ł', 'J': 'J',
@@ -277,7 +277,7 @@ const fontStyles = {
         return patches[c.toUpperCase()] || c;
     }),
 
-    FantasyStyle: str => str.replace(/[A-Za-z0-9]/g, c => {
+    Fantasy: str => str.replace(/[A-Za-z0-9]/g, c => {
         const patches = {
             'A': 'ᚨ', 'B': 'ℬ', 'C': 'ᚲ', 'D': 'ᛞ', 'E': 'ℰ',
             'F': 'ᚠ', 'G': 'ᚷ', 'H': 'ℋ', 'I': 'ℑ', 'J': 'ᛃ',
@@ -355,9 +355,9 @@ const fontStyles = {
         }).join('');
     },
 
-    InkSplatterStyle: str => str.replace(/./g, c => c + '\u0489'),
+    InkSplatter: str => str.replace(/./g, c => c + '\u0489'),
 
-    InvertedStyle: str => [...str].reverse().join(''),
+    Inverted: str => [...str].reverse().join(''),
 
     FireFont: str => str.split('').map(c => '🔥' + c).join(''),
 
@@ -375,7 +375,7 @@ const fontStyles = {
 
     slashyFont: str => str.split('').map(c => `/${c}/`).join(''),
 
-    upsideDownFont: str => {
+    upsideDown: str => {
         const flipMap = {
             a: 'ɐ', b: 'q', c: 'ɔ', d: 'p', e: 'ǝ', f: 'ɟ', g: 'ƃ',
             h: 'ɥ', i: 'ᴉ', j: 'ɾ', k: 'ʞ', l: 'ʃ', m: 'ɯ', n: 'u',
@@ -427,7 +427,35 @@ const fontStyles = {
 
     dreamcore: str => `°°°·.°·..·°¯°·._.· ${str} ·._.·°¯°·.·° .·°°°`,
 
-    darkPulse: str => `😾☟  ${str}  ♞😈`
+    darkPulse: str => `😾☟  ${str}  ♞😈`,
+
+    technoSpice: str => `🧬⌁⌁ ${str} ⌁⌁🧬`,
+
+    ghostCircuit: str => `👻⚙️⛓️ ${str} ⛓️⚙️👻`,
+
+    animeRush: str => `🌆💨『 ${str} 』💨🌆`,
+
+    pixelWhirl: str => `🌀▣▣ ${str} ▣▣🌀`,
+
+    lavaTwist: str => `🌋🔥⤴️ ${str} ⤵️🔥🌋`,
+
+    zenGarden: str => `🍃🧘‍♂️ ~ ${str} ~ 🧘‍♀️🍃`,
+
+    cyberKnight: str => `🛡️⚔️ ${str} ⚔️🛡️`,
+
+    bubblePop: str => `🫧🎈 ${str} 🎈🫧`,
+
+    twilightEcho: str => `🌒🔮 ${str} 🔮🌘`,
+
+    rainbowPixel: str => `🌈🧁 ${str} 🧁🌈`,
+
+    vaporSoul: str => `🌫️💿 ${str} 💿🌫️`,
+
+    crystalNova: str => `💎✨ ${str} ✨💎`,
+
+    stormRider: str => `🌪️⚡ ${str} ⚡🌪️`,
+
+    arcadeDream: str => `🕹️👾 ${str} 👾🕹️`,
 }
 
 //code for print output

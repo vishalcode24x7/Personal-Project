@@ -67,7 +67,7 @@ header {
 
 .nav-bar ul li:hover {
     cursor: pointer;
-    filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(110%) contrast(100%);
+    filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(130%) contrast(100%);
 }
 
 .nav-links {
@@ -132,7 +132,6 @@ header {
     padding: 10px;
     box-shadow: 0 0 15px rgb(5, 5, 5);
     box-sizing: border-box;
-
 }
 
 .main-body .container #outputFonts span {

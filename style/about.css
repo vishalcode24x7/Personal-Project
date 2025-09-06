@@ -1,4 +1,4 @@
-/* Base styling */
+  /* Base styling */
 * {
   margin: 0;
   padding: 0;
@@ -70,7 +70,7 @@ header {
 
 .nav-bar ul li:hover {
   cursor: pointer;
-  filter: brightness(0) saturate(400%) invert(45%) sepia(190%) saturate(646%) hue-rotate(149deg) brightness(100%) contrast(101%);
+  filter: invert(49%) sepia(48%) saturate(686%) hue-rotate(165deg) brightness(102%) contrast(98%);
 }
 
 .hamburger {
