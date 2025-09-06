@@ -14,6 +14,10 @@
     filter: brightness(0) saturate(60%) invert(50%) sepia(80%) saturate(600%) hue-rotate(350deg) brightness(110%) contrast(100%);
 }
 
+.hamburger{
+    color:  rgb(248, 138, 4);
+}
+
 body {
     display: flex;
     height: 100vh;

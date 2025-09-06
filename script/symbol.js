@@ -3,12 +3,20 @@ const navLinks = document.querySelector('.nav-links');
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
-
+  if (navLinks.classList.contains('active')) {
+    hamburger.innerHTML = "&#10005"; // Cross icon
+    hamburger.style.color = "red";
+  } else {
+    hamburger.innerHTML = "&#9776"; // Hamburger icon
+    hamburger.style.color = "rgb(248, 138, 4)"
+  }
 });
 
 document.addEventListener('click', (e) => {
   if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
     navLinks.classList.remove('active');
+    hamburger.innerHTML = "&#9776"; // Hamburger icon
+    hamburger.style.color = "rgb(248, 138, 4)"
   }
 });
 

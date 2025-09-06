@@ -24,6 +24,9 @@ body {
     cursor: pointer;
     filter: brightness(0) saturate(100%) invert(50%) sepia(80%) saturate(300%) hue-rotate(90deg) brightness(130%) contrast(100%);
 }
+.hamburger{
+    color: rgb(32, 248, 4)
+}
 
 .main-body {
     display: flex;
