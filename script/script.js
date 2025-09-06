@@ -517,6 +517,7 @@ hamburger.addEventListener('click', () => {
     if (navLinks.classList.contains('active')) {
         hamburger.innerHTML = "&#10005"; // Cross icon
         hamburger.style.color = "red";
+        hamburger.style.fontSize = "2rem";
     } else {
         hamburger.innerHTML = "&#9776"; // Hamburger icon
         hamburger.style.color = "rgb(32, 248, 4)";
