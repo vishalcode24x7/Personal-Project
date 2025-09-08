@@ -6,9 +6,11 @@ hamburger.addEventListener('click', () => {
   if (navLinks.classList.contains('active')) {
     hamburger.innerHTML = "&#10005"; // Cross icon
     hamburger.style.color = "red";
+    navLinks.style.right = "0%";
   } else {
     hamburger.innerHTML = "&#9776"; // Hamburger icon
-    hamburger.style.color = "rgb(248, 138, 4)"
+    hamburger.style.color = "#f88a04ff";
+    navLinks.style.right = "-100%";
   }
 });
 
@@ -17,6 +19,7 @@ document.addEventListener('click', (e) => {
     navLinks.classList.remove('active');
     hamburger.innerHTML = "&#9776"; // Hamburger icon
     hamburger.style.color = "rgb(248, 138, 4)"
+    navLinks.style.right = "-100%";
   }
 });
 

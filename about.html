@@ -76,9 +76,11 @@
             if (navLinks.classList.contains('active')) {
                 hamburger.innerHTML = "&#10005"; // Cross icon
                 hamburger.style.color = "red";
+                navLinks.style.right = "0%";
             } else {
                 hamburger.innerHTML = "&#9776"; // Hamburger icon
-                hamburger.style.color = "rgb(84, 163, 237)"
+                hamburger.style.color = "rgb(84, 163, 237)";
+                navLinks.style.right = "-100%";
             }
         });
 
@@ -87,6 +89,7 @@
                 navLinks.classList.remove('active');
                 hamburger.innerHTML = "&#9776"; // Hamburger icon
                 hamburger.style.color = "rgb(84, 163, 237)"
+                navLinks.style.right = "-100%";
             }
         });
     </script>

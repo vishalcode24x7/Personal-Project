@@ -59,15 +59,16 @@ header {
 
 @media (max-width: 950px) {
     .nav-links {
-        position: fixed;
+        position: absolute;
+        z-index: 1;
+        right: -100%;
         top: 66px;
-        right: 0;
         background-color: #000000;
         flex-direction: column;
         width: 170px;
+        height: 100vh;
         padding: 1rem;
-        display: none;
-        /* transition: all 6.3s ease; */
+        transition: all 0.3s;
     }
 
     .nav-bar .nav-links li {

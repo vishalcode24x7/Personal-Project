@@ -514,12 +514,15 @@ const header = document.querySelector('.header-body');
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    
     if (navLinks.classList.contains('active')) {
         hamburger.innerHTML = "&#10005"; // Cross icon
         hamburger.style.color = "red";
+        navLinks.style.right = "0%";
     } else {
         hamburger.innerHTML = "&#9776"; // Hamburger icon
         hamburger.style.color = "rgb(32, 248, 4)";
+        navLinks.style.right = "-100%";
     }
 });
 
@@ -528,5 +531,6 @@ document.addEventListener('click', (e) => {
         navLinks.classList.remove('active');
         hamburger.innerHTML = "&#9776";
         hamburger.style.color = "rgb(32, 248, 4)";
+        navLinks.style.right = "-100%";
     }
 });
