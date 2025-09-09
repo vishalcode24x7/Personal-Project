@@ -3,6 +3,7 @@ header {
     width: 100%;
     z-index: 1000;
     top: 0;
+    height: 70px;
 }
 
 .nav-bar {
@@ -14,6 +15,7 @@ header {
     color: #fff;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 .nav-bar h1 {
@@ -62,8 +64,8 @@ header {
         position: absolute;
         z-index: 1;
         right: -100%;
-        top: 66px;
-        background-color: #000000;
+        top: 70px;
+        background: linear-gradient(black,rgb(255, 255, 255));
         flex-direction: column;
         width: 170px;
         height: 100vh;
@@ -72,7 +74,7 @@ header {
     }
 
     .nav-bar .nav-links li {
-        padding: 5px;
+        padding: 3px;
         border-bottom: 1px solid #afa1a1;
         border-radius: 5px;
     }
