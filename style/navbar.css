@@ -65,7 +65,7 @@ header {
         z-index: 1;
         right: -100%;
         top: 70px;
-        background: linear-gradient(black,rgb(255, 255, 255));
+        background: linear-gradient(black,rgb(79, 10, 10));
         flex-direction: column;
         width: 170px;
         height: 100vh;

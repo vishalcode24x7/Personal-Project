@@ -54,7 +54,7 @@ body {
     font-family: 'Arial', sans-serif;
     border-radius: 40px;
     border: 2px solid #000000;
-    box-shadow: 0 0 15px rgb(5, 5, 5);
+    box-shadow: 0 0 10px rgb(5, 5, 5);
     padding-top: 15px;
     overflow-x: auto;
     outline: none;
@@ -79,22 +79,24 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    box-shadow: 0 0 15px rgb(5, 5, 5);
+    box-shadow: 0 0 10px rgb(5, 5, 5);
     box-sizing: border-box;
 }
 
 .main-body .container #outputFonts span {
-    height: 25px;
-    width: 300px;
+    width: 400px;
     position: relative;
     display: inline-block;
-    max-width: 300px;
+    max-width: 400px;
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 18px;
     -ms-overflow-style: none;
+}
+
+.main-body .container #outputFonts strong{
+    font-size: 14px;
 }
 
 .main-body .container #outputFonts span::-webkit-scrollbar {
