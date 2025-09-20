@@ -41,7 +41,7 @@ body {
 
 .main-body .container {
     text-align: center;
-    width: 50vw;
+    width: 60vw;
     padding: 30px;
 }
 
@@ -91,7 +91,7 @@ body {
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    font-size: 18px;
+    font-size: 20px;
     -ms-overflow-style: none;
 }
 
