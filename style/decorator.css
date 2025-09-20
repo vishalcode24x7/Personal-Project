@@ -73,9 +73,17 @@ input[type="text"] {
 }
 
 .decorated span {
-    flex: 1;
     font-weight: bold;
-    text-align: center;
+    /* text-align: center;  */
+    width: 300px;
+    position: relative;
+    display: inline-block;
+    max-width: 300px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    font-size: 1rem;
+    -ms-overflow-style: none;
 }
 
 .copy-btn {
@@ -121,6 +129,6 @@ input[type="text"] {
     }
 
     .decorated {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
