@@ -73,8 +73,6 @@ input[type="text"] {
 }
 
 .decorated span {
-    font-weight: bold;
-    /* text-align: center;  */
     width: 300px;
     position: relative;
     display: inline-block;
@@ -84,6 +82,7 @@ input[type="text"] {
     scrollbar-width: none;
     font-size: 1rem;
     -ms-overflow-style: none;
+    /* font-weight: bold; */
 }
 
 .copy-btn {

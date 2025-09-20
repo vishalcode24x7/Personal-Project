@@ -1,8 +1,8 @@
 //code for auto type
 var typed = new Typed('.auto-type', {
-    strings: ["Fancy Font Generator", "QR Code Generator", "Cool Symbol Selector"],
+    strings: ["Fancy Font Generator", "QR Code Generator", "Cool Symbol Selector", "Text Decorator"],
     typeSpeed: 10,
-    backSpeed: 10,
+    backSpeed: 9,
     backDelay: 1500,     // Wait 1 second before erasing
     startDelay: 100, // Start typing after 0.1 seconds
     loop: true

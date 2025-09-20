@@ -1,63 +1,66 @@
 const input = document.getElementById('inputText');
 const output = document.getElementById('outputContainer');
 
+function toBoldUnicode(text) {
+    const normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    const bold = [
+        "𝐀", "𝐁", "𝐂", "𝐃", "𝐄", "𝐅", "𝐆", "𝐇", "𝐈", "𝐉", "𝐊", "𝐋", "𝐌", "𝐍", "𝐎", "𝐏", "𝐐", "𝐑", "𝐒", "𝐓", "𝐔", "𝐕", "𝐖", "𝐗", "𝐘", "𝐙",
+        "𝐚", "𝐛", "𝐜", "𝐝", "𝐞", "𝐟", "𝐠", "𝐡", "𝐢", "𝐣", "𝐤", "𝐥", "𝐦", "𝐧", "𝐨", "𝐩", "𝐪", "𝐫", "𝐬", "𝐭", "𝐮", "𝐯", "𝐰", "𝐱", "𝐲", "𝐳",
+        "𝟎", "𝟏", "𝟐", "𝟑", "𝟒", "𝟓", "𝟔", "𝟕", "𝟖", "𝟗"
+    ];
+
+
+    return text.split('').map(char => {
+        const index = normal.indexOf(char);
+        return index !== -1 ? bold[index] : char;
+    }).join('');
+}
+
+// toBoldUnicode(txt)
 const styles = [
-    { wrap: txt => `*•.¸♡ ${txt} ♡¸.•*` },
-    { wrap: txt => `★彡 ${txt} 彡★` },
-    { wrap: txt => `♡ ${txt} ♡` },
-    { wrap: txt => `➵ ${txt} ➵` },
-    { wrap: txt => `𓆩 ${txt} 𓆪` },
-    { wrap: txt => `◦•●◉✿ ${txt} ✿◉●•◦` },
-    { wrap: txt => `↤↤↤↤↤ ${txt} ↦↦↦↦↦` },
-    { wrap: txt => `↫↫↫↫↫ ${txt} ↬↬↬↬↬` },
-    { wrap: txt => `░▒▓█►─═ ${txt} ═─◄█▓▒░` },
-    { wrap: txt => `▁ ▂ ▄ ▅ ▆ ▇ █ ${txt}  █ ▇ ▆ ▅ ▄ ▂ ▁` },
-    { wrap: txt => `ღ(¯◕‿◕¯) ${txt} ღ(¯◕‿◕¯)` },
-    { wrap: txt => `ஜ۩۞۩ஜ ${txt} ஜ۩۞۩ஜ` },
-    { wrap: txt => `(¯·..·¯·..-> ${txt} <-..·¯·..·¯) ` },
-    { wrap: txt => `—(••÷[ ${txt} ]÷••)—` },
-    { wrap: txt => `➶➶➶➶ ${txt} ➶➶➶➶` },
-    { wrap: txt => `(-_-) ${txt} (-_-)` },
-    { wrap: txt => `♛ ${txt} ♛` },
-    { wrap: txt => `✿ ${txt} ✿` },
-    { wrap: txt => `╰☆☆ ${txt} ☆☆╮` },
-    { wrap: txt => `★·.· ${txt} ·.·★` },
-    { wrap: txt => `♦ ${txt} ♦` },
-    { wrap: txt => `▌│█║▌║▌║ ${txt} ▌│█║▌║▌║` },
-    { wrap: txt => `▀▄▀▄▀▄ ${txt} ▀▄▀▄▀▄` },
-    { wrap: txt => `.•♫•♬• ${txt} •♬•♫•.` },
-    { wrap: txt => `•?((¯°·._.•  ${txt} •._.·°¯))؟•` },
-    { wrap: txt => `]|I{•------» ${txt} «------•}I|[` },
-    { wrap: txt => `🌙 ${txt} 🌙` },
-    { wrap: txt => `☁ ${txt} ☁` },
-    { wrap: txt => `♩♪♫ ${txt} ♫♩♪` },
-    { wrap: txt => `༄ ${txt} ༄` },
-    { wrap: txt => `૮₍ ´• ˕ • ₎ა ${txt} ૮₍ ´• ˕ • ₎ა` },
-    { wrap: txt => `(≧◡≦) ${txt} (≧◡≦)` },
-    { wrap: txt => `✩ ${txt} ✩` },
-    { wrap: txt => `[ ${txt} ]` }
+    { wrap: txt => toBoldUnicode(`*•.¸♡ ${txt} ♡¸.•*`) },
+    { wrap: txt => toBoldUnicode(`★彡 ${txt} 彡★`) },
+    { wrap: txt => toBoldUnicode(`♡ ${txt} ♡`) },
+    { wrap: txt => toBoldUnicode(`➵ ${txt} ➵`) },
+    { wrap: txt => toBoldUnicode(`𓆩 ${txt} 𓆪`) },
+    { wrap: txt => toBoldUnicode(`◦•●◉✿ ${txt} ✿◉●•◦`) },
+    { wrap: txt => toBoldUnicode(`↤↤↤↤↤ ${txt} ↦↦↦↦↦`) },
+    { wrap: txt => toBoldUnicode(`↫↫↫↫↫ ${txt} ↬↬↬↬↬`) },
+    { wrap: txt => toBoldUnicode(`░▒▓█►─═ ${txt} ═─◄█▓▒░`) },
+    { wrap: txt => toBoldUnicode(`▁ ▂ ▄ ▅ ▆ ▇ █ ${txt} █ ▇ ▆ ▅ ▄ ▂ ▁`) },
+    { wrap: txt => toBoldUnicode(`ღ(¯◕‿◕¯) ${txt} ღ(¯◕‿◕¯)`) },
+    { wrap: txt => toBoldUnicode(`ஜ۩۞۩ஜ ${txt} ஜ۩۞۩ஜ`) },
+    { wrap: txt => toBoldUnicode(`(¯·..·¯·..-> ${txt} <-..·¯·..·¯)`) },
+    { wrap: txt => toBoldUnicode(`—(••÷[ ${txt} ]÷••)—`) },
+    { wrap: txt => toBoldUnicode(`➶➶➶➶ ${txt} ➶➶➶➶`) },
+    { wrap: txt => toBoldUnicode(`(-_-) ${txt} (-_-)`) },
+    { wrap: txt => toBoldUnicode(`♛ ${txt} ♛`) },
+    { wrap: txt => toBoldUnicode(`✿ ${txt} ✿`) },
+    { wrap: txt => toBoldUnicode(`╰☆☆ ${txt} ☆☆╮`) },
+    { wrap: txt => toBoldUnicode(`★·.· ${txt} ·.·★`) },
+    { wrap: txt => toBoldUnicode(`♦ ${txt} ♦`) },
+    { wrap: txt => toBoldUnicode(`▌│█║▌║▌║ ${txt} ▌│█║▌║▌║`) },
+    { wrap: txt => toBoldUnicode(`▀▄▀▄▀▄ ${txt} ▀▄▀▄▀▄`) },
+    { wrap: txt => toBoldUnicode(`.•♫•♬• ${txt} •♬•♫•.`) },
+    { wrap: txt => toBoldUnicode(`•?((¯°·._.• ${txt} •._.·°¯))؟•`) },
+    { wrap: txt => toBoldUnicode(`]|I{•------» ${txt} «------•}I|[`) },
+    { wrap: txt => toBoldUnicode(`🌙 ${txt} 🌙`) },
+    { wrap: txt => toBoldUnicode(`☁ ${txt} ☁`) },
+    { wrap: txt => toBoldUnicode(`♩♪♫ ${txt} ♫♩♪`) },
+    { wrap: txt => toBoldUnicode(`༄ ${txt} ༄`) },
+    { wrap: txt => toBoldUnicode(`૮₍ ´• ˕ • ₎ა ${txt} ૮₍ ´• ˕ • ₎ა`) },
+    { wrap: txt => toBoldUnicode(`(≧◡≦) ${txt} (≧◡≦)`) },
+    { wrap: txt => toBoldUnicode(`✩ ${txt} ✩`) },
+    { wrap: txt => toBoldUnicode(`[ ${txt} ]`) }
 ];
 
-// const text = {
-//     Bold: text => text.replace(/[A-Za-z0-9]/g, c => {
-//         const code = c.charCodeAt(0);
-//         if (c >= 'A' && c <= 'Z') {
-//             return String.fromCodePoint(0x1D400 + (code - 65)); // 'A' to 'Z'
-//         } else if (c >= 'a' && c <= 'z') {
-//             return String.fromCodePoint(0x1D41A + (code - 97)); // 'a' to 'z'
-//         } else if (code >= 48 && code <= 57) {
-//             return String.fromCodePoint(0x1D7CE + (code - 48)); // 0-9
-//         } else {
-//             return c;
-//         }
-//     })
-// }
 function renderDecorations(text) {
     output.innerHTML = '';
-    
+
     styles.forEach(style => {
 
-        
+
         const decoratedText = style.wrap(text);
         const div = document.createElement('div');
         div.className = 'decorated';
