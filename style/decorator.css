@@ -73,10 +73,9 @@ input[type="text"] {
 }
 
 .decorated span {
-    width: 300px;
+    width: 90%;
     position: relative;
     display: inline-block;
-    max-width: 300px;
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;

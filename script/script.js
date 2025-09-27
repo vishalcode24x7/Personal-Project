@@ -14,8 +14,8 @@ const output = document.getElementById('outputFonts');
 const copyButton = document.querySelector('.copy-btn');
 
 
-const siteURL = encodeURIComponent("https://textaura.org"); // Replace with your actual URL
 const siteText = encodeURIComponent("Check out this cool font converter!");
+const siteURL = encodeURIComponent("https://textaura.org"); // ✅ Add this line
 
 function shareTo(platform) {
     let shareURL = "";
@@ -35,7 +35,7 @@ function shareTo(platform) {
 }
 
 function copyLink() {
-    navigator.clipboard.writeText("https://yourdomain.com");
+    navigator.clipboard.writeText("https://textaura.org");
     alert("Link copied to clipboard!");
 }
 
