@@ -14,7 +14,7 @@ const output = document.getElementById('outputFonts');
 const copyButton = document.querySelector('.copy-btn');
 
 
-const siteURL = encodeURIComponent("https://yourdomain.com"); // Replace with your actual URL
+const siteURL = encodeURIComponent("https://textaura.org"); // Replace with your actual URL
 const siteText = encodeURIComponent("Check out this cool font converter!");
 
 function shareTo(platform) {
@@ -458,6 +458,7 @@ const fontStyles = {
     arcadeDream: str => `🕹️👾 ${str} 👾🕹️`,
 }
 
+
 //code for print output
 function renderOutput(text) {
     output.innerHTML = '';
@@ -465,20 +466,29 @@ function renderOutput(text) {
     for (const style in fontStyles) {
         const converted = fontStyles[style](text);
 
+        // Create main block
         const block = document.createElement('div');
         block.className = 'output-block';
 
+        // Create span and append first
+        const span = document.createElement('span');
+        span.textContent = converted;
+        block.appendChild(span);
+
+        // Create info-block
+        const info = document.createElement('div');
+        info.className = 'info-block';
+
+        // Create strong
         const strong = document.createElement('strong');
         strong.textContent = style;
 
-        const span = document.createElement('span');
-        span.textContent = converted;
-
+        // Create copy button
         const button = document.createElement('button');
         button.className = 'copy-btn';
         button.textContent = 'Copy';
 
-        //code for copy button
+        // Copy button logic
         button.addEventListener('click', () => {
             navigator.clipboard.writeText(converted);
             button.style.backgroundColor = 'rgba(60, 163, 53, 1)';
@@ -491,21 +501,24 @@ function renderOutput(text) {
             }, 1000);
         });
 
-        block.appendChild(strong);
-        block.appendChild(document.createElement('br'));
-        block.appendChild(span);
-        block.appendChild(document.createElement('br'));
-        block.appendChild(button);
+        // Append strong and button to info-block
+        info.appendChild(strong);
+        info.appendChild(button);
 
+        // Append info-block to main block
+        block.appendChild(info);
+
+        // Finally, append block to output
         output.appendChild(block);
     }
 }
 
+// Input listener
 input.addEventListener('input', () => {
     renderOutput(input.value);
 });
 
-// ⏱️ Initial render when page loads
+// Initial render
 renderOutput(input.value);
 
 const hamburger = document.querySelector('.hamburger');
@@ -514,7 +527,7 @@ const header = document.querySelector('.header-body');
 
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    
+
     if (navLinks.classList.contains('active')) {
         hamburger.innerHTML = "&#10005"; // Cross icon
         hamburger.style.color = "red";

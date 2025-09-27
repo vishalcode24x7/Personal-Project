@@ -85,16 +85,23 @@ body {
 }
 
 .main-body .container #outputFonts span {
-    width: 400px;
+    width: 100%;
+    background-color: rgb(237, 233, 233);
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border-radius: 8px;
     position: relative;
     display: inline-block;
-    max-width: 400px;
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    font-size: 20px;
+    font-size: 18px;
     -ms-overflow-style: none;
 }
+
+
 
 .main-body .container #outputFonts strong {
     font-size: 14px;
@@ -109,8 +116,16 @@ body {
     gap: 10px;
 }
 
+.main-body .container #outputFonts .output-block .info-block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
 .output-block {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 5px 0;
@@ -233,11 +248,60 @@ a.button:hover {
     padding-right: 140px;
 }
 
+#faq-section {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 2rem 12rem;
+    max-width: 100%;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#faq-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+}
+
+.faq-item h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.faq-item img {
+    width: 50%;
+    max-width: 400px;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 @media (max-width: 950px) {
     .main-body .container {
         text-align: center;
         width: 80vw;
         padding: 30px;
+    }
+
+    #faq-section {
+        padding: 1rem;
+    }
+
+    .faq-item img {
+        max-width: 100%;
     }
 }
 
@@ -261,7 +325,7 @@ a.button:hover {
     }
 
     .main-body .container .output-block span {
-        font-size: 19px;
+        font-size: 16px;
     }
 
     .main-body .container #userInput {
@@ -277,6 +341,18 @@ a.button:hover {
         position: fixed;
         bottom: 40px;
         right: 37px;
+    }
+
+    #faq-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .faq-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .faq-item p {
+        font-size: 0.95rem;
     }
 
 }

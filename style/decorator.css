@@ -80,7 +80,7 @@ input[type="text"] {
     overflow-x: auto;
     white-space: nowrap;
     scrollbar-width: none;
-    font-size: 1rem;
+    font-size: 18px;
     -ms-overflow-style: none;
     /* font-weight: bold; */
 }
@@ -88,7 +88,7 @@ input[type="text"] {
 .copy-btn {
     padding: 6px 12px;
     margin-left: 10px;
-    font-size: 0.9rem;
+    font-size: 17px;
     background-color: #409b0f;
     color: white;
     border: none;
@@ -126,8 +126,11 @@ input[type="text"] {
     .container h1 {
         font-size: 25px;
     }
-
-    .decorated {
-        font-size: 1rem;
+    .decorated span {
+        font-size: 16px;
+    }
+    .copy-btn {
+        font-size: 15px;
+        padding: 5px 10px;
     }
 }
