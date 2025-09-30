@@ -99,6 +99,39 @@ input[type="text"] {
     background-color: #1db60f;
 }
 
+.tool-info {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.tool-info h2 {
+    color: #760707;
+    margin-top: 20px;
+    font-size: 1.6rem;
+}
+
+.tool-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.tool-info ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.tool-info ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
 @media (max-width: 950px) {
     .container {
         width: 80vh;
@@ -115,6 +148,21 @@ input[type="text"] {
     #outputContainer {
         width: 100%;
     }
+
+    .tool-info {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+
+    .tool-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .tool-info p,
+    .tool-info ul li {
+        font-size: 0.95rem;
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -125,11 +173,27 @@ input[type="text"] {
     .container h1 {
         font-size: 25px;
     }
+
     .decorated span {
         font-size: 16px;
     }
+
     .copy-btn {
         font-size: 15px;
         padding: 5px 10px;
     }
+
+    .tool-info {
+        padding: 10px;
+    }
+
+    .tool-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .tool-info p,
+    .tool-info ul li {
+        font-size: 0.9rem;
+    }
+
 }

@@ -22,7 +22,7 @@
     filter: brightness(0) saturate(400%) invert(50%) sepia(900%) saturate(846%) hue-rotate(223deg) brightness(80%) contrast(141%);
 }
 
-.hamburger{
+.hamburger {
     color: rgb(161, 74, 247);
 }
 
@@ -136,6 +136,57 @@ select {
     border-radius: var(--br-r);
 }
 
+.qr-info {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f4ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.qr-info h2 {
+    color: #6a1b9a;
+    margin-top: 20px;
+    font-size: 1.6rem;
+}
+
+.qr-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.qr-info ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.qr-info ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
+@media (max-width: 950px) {
+    .qr-info {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+
+    .qr-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .qr-info p,
+    .qr-info ul li {
+        font-size: 0.95rem;
+    }
+}
+
+
+
 @media (max-width: 450px) {
     .box .container {
         width: 350px;
@@ -158,5 +209,18 @@ select {
 
     .qr-body img {
         padding: 5px;
+    }
+
+    .qr-info {
+        padding: 10px;
+    }
+
+    .qr-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .qr-info p,
+    .qr-info ul li {
+        font-size: 0.9rem;
     }
 }
