@@ -67,6 +67,13 @@ body {
 }
 
 
+.main-body .container .animated-heading {
+    color: rgb(9, 96, 12);
+    text-align: center;
+    font-size: 15px;
+    padding: 0;
+}
+
 .main-body .container h2 {
     padding-top: 30px;
     text-align: left;
@@ -281,11 +288,51 @@ a.button:hover {
 }
 
 .faq-item img {
-    width: 50%;
+    width: 25%;
     max-width: 400px;
     margin-top: 1rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.seo-content-section {
+    width: 100vw;
+    padding: 30px 180px;
+    background-color: rgb(255, 255, 255);
+    line-height: 1.8;
+}
+
+.seo-content-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00d4ff;
+}
+
+.seo-content-section h3 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #ff8c00;
+}
+
+.seo-content-section p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.seo-content-section ul,
+.seo-content-section ol {
+    margin: 15px 0 15px 30px;
+}
+
+.seo-content-section li {
+    margin-bottom: 10px;
+}
+
+.seo-content-section a {
+    color: #00d4ff;
+    text-decoration: underline;
 }
 
 
@@ -302,6 +349,13 @@ a.button:hover {
 
     .faq-item img {
         max-width: 100%;
+    }
+
+    .seo-content-section {
+        width: 100vw;
+        padding: 30px 10px;
+        background-color: rgb(255, 255, 255);
+        line-height: 1.8;
     }
 }
 
