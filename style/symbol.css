@@ -34,7 +34,7 @@ main h1 {
 .symbol {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: flex-start;
     gap: 0.4rem;
 }
 
@@ -103,7 +103,7 @@ body main h3 {
 }
 
 .tool-info p {
-    font-size: 1rem;
+    font-size: 5px;
     line-height: 1.6;
     margin-bottom: 15px;
 }
@@ -118,6 +118,114 @@ body main h3 {
     list-style-type: disc;
 }
 
+/* ========== SEO CONTENT SECTIONS ========== */
+
+/* Intro Section */
+.intro-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(0, 212, 255, 0.5);
+    border-left: 4px solid #00d4ff;
+    border-radius: 8px;
+}
+
+.intro-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.how-to-use {
+    background: rgba(255, 140, 0, 0.5);
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #ff8c00;
+    margin-top: 20px;
+}
+
+/* Symbol Sections */
+.symbol-section {
+    margin: 40px 0;
+}
+
+.symbol-section h2 {
+    font-size: 24px;
+    margin: 20px 0 2px 6px;
+    color: #000000;
+}
+
+.section-desc {
+    margin: 0 0 15px 10px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
+    /* font-style: italic; */
+}
+
+/* Enhanced Tool Info */
+.tool-info {
+    max-width: 900px;
+    margin: 60px auto 40px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(253, 254, 255, 0.8), rgba(205, 170, 132, 0.8));
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.tool-info h2 {
+    font-size: 28px;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.tool-info h3 {
+    font-size: 22px;
+    color: #ff8c00;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.tool-info p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.tool-info ul,
+.tool-info ol {
+    margin: 20px 0 20px 30px;
+}
+
+.tool-info li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.tool-info ol {
+    list-style-type: decimal;
+}
+
+.tool-info a {
+    color: #00d4ff;
+    text-decoration: underline;
+}
+
+.tool-info a:hover {
+    color: #ff8c00;
+}
+
+.note {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 140, 0, 0.05);
+    border-radius: 6px;
+    font-size: 14px;
+    border-left: 3px solid #ff8c00;
+}
+
+/* ========== RESPONSIVE ========== */
+
 @media (max-width: 950px) {
     .tool-info {
         padding: 15px;
@@ -131,6 +239,23 @@ body main h3 {
     .tool-info p,
     .tool-info ul li {
         font-size: 0.95rem;
+    }
+    .intro-section,
+    .tool-info {
+        padding: 25px 20px;
+        margin: 40px 15px;
+    }
+
+    .symbol-section h2 {
+        font-size: 20px;
+    }
+
+    .tool-info h2 {
+        font-size: 24px;
+    }
+
+    .tool-info h3 {
+        font-size: 20px;
     }
 }
 
@@ -167,6 +292,36 @@ body main h3 {
     .tool-info p,
     .tool-info ul li {
         font-size: 0.9rem;
+    }
+
+    .intro-section p {
+        font-size: 12px;
+    }
+    .intro-section,
+    .tool-info {
+        padding: 20px 15px;
+        margin: 30px 10px;
+    }
+
+    .symbol-section h2 {
+        font-size: 18px;
+    }
+
+    .tool-info h2 {
+        font-size: 22px;
+    }
+
+    .tool-info h3 {
+        font-size: 18px;
+    }
+
+    .tool-info ul,
+    .tool-info ol {
+        margin-left: 20px;
+    }
+
+    .section-desc {
+        font-size: 10px;
     }
 
 }
