@@ -251,15 +251,12 @@ a.button:hover {
     z-index: 1;
 }
 
-.footer-body div {
-    padding-right: 140px;
-}
 
 #faq-section {
     background-color: rgb(0, 0, 0);
     color: white;
-    padding: 2rem 12rem;
-    max-width: 100%;
+    padding: 2rem 11rem;
+    width: 100vw;
     margin: auto;
     font-family: 'Segoe UI', sans-serif;
 }
