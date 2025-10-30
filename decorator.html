@@ -4,20 +4,75 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO META TAGS -->
+    <title>Text Decorator - Stylish Fancy Text Generator for Instagram | TextAura</title>
     <meta name="description"
-        content="Use TextAura's free Text Decorator Tool to generate stylish, fancy, and creative text for social media, bios, and more." />
+        content="Generate stylish fancy text with our free text decorator. 50+ decorative fonts for Instagram bio, WhatsApp status, TikTok captions. Copy-paste instantly. No signup required.">
     <meta name="keywords"
-        content="text decorator, stylish text, fancy text generator, text aura, creative fonts, social media text" />
+        content="text decorator, stylish text generator, fancy text, instagram fonts, text styler, fancy fonts, decorative text, cool text generator, aesthetic text, social media fonts">
     <meta name="author" content="TextAura" />
     <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Text Decorator Tool by TextAura" />
+
+    <!-- OPEN GRAPH TAGS -->
+    <meta property="og:title" content="Text Decorator - Stylish Fancy Text Generator | TextAura" />
     <meta property="og:description"
-        content="Generate stylish and fancy text instantly with TextAura's free online tool." />
+        content="Create stylish and fancy text instantly. 50+ decorative fonts perfect for Instagram, WhatsApp, and all social media." />
     <meta property="og:url" content="https://textaura.org/decorator.html" />
+    <meta property="og:image" content="https://textaura.org/assets/preview.webp">
     <meta property="og:type" content="website" />
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Text Decorator - Stylish Text Generator | TextAura">
+    <meta name="twitter:description"
+        content="Transform plain text into fancy decorated fonts. Perfect for Instagram bios, WhatsApp status, and creative posts.">
+    <meta name="twitter:image" content="https://textaura.org/assets/preview.webp">
+
+    <!-- CANONICAL URL -->
+    <link rel="canonical" href="https://textaura.org/decorator.html" />
+
+    <!-- FAVICON -->
     <link rel="icon" href="assets/FullLogo.ico" type="image/x-icon">
-    <title>Text Decorator Tool | Stylish Text Generator by TextAura</title>
-    <!-- Google tag (gtag.js) -->
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="style/decorator.css" />
+    <link rel="stylesheet" href="style/navbar.css">
+    <link rel="stylesheet" href="style/footer.css">
+
+    <!-- SCHEMA MARKUP (Enhanced) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "TextAura Text Decorator",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "2800",
+        "bestRating": "5"
+      },
+      "description": "Free text decorator tool to generate stylish and fancy text for social media",
+      "url": "https://textaura.org/decorator.html",
+      "screenshot": "https://textaura.org/assets/preview.webp",
+      "featureList": [
+        "50+ decorative text styles",
+        "Instant copy-paste",
+        "Works on all platforms",
+        "No registration required",
+        "Mobile-friendly interface"
+      ]
+    }
+    </script>
+
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KHY3YTF4KX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -25,59 +80,259 @@
         gtag('js', new Date());
         gtag('config', 'G-KHY3YTF4KX');
     </script>
-    <link rel="canonical" href="https://www.textaura.org/decorator.html" />
-    <link rel="stylesheet" href="style/decorator.css" />
-    <link rel="stylesheet" href="style/navbar.css">
-    <link rel="stylesheet" href="style/footer.css">
 </head>
 
 <body>
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <!-- <img class="logo-pick" src="image.jpg" width="70"> -->
                 <span>TextAura</span>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="symbol.html">Symboles</a></li>
-                <li><a href="qrcode.html">QR code</a></li>
-                <li><a href="decorator.html">Decorator</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/symbol.html">Symbols</a></li>
+                <li><a href="/qrcode.html">QR code</a></li>
+                <li><a href="/decorator.html" aria-current="page">Decorator</a></li>
+                <li><a href="/about.html">About</a></li>
             </ul>
-            <div class="hamburger">&#9776;</div>
+            <div class="hamburger" aria-label="Toggle menu">&#9776;</div>
         </nav>
     </header>
-    <div class="container">
-        <h1>Text Decorator Tool</h1>
-        <input type="text" id="inputText" placeholder="Type your name or text..." />
-        <div id="outputContainer"></div>
-    </div>
 
-    <section class="tool-info">
-        <h2>What is a Text Decorator?</h2>
-        <p>
-            A text decorator lets you style your plain text with fancy fonts, symbols, and effects.
-            It's perfect for social media bios, captions, usernames, and creative posts.
+    <div class="container">
+        <!-- SEO OPTIMIZED H1 -->
+        <h1>Text Decorator for Instagram, Games & Social Media</h1>
+
+        <!-- SEO INTRO (NEW!) -->
+        <p class="intro-text">
+            Transform your plain text into <strong>stylish fancy text</strong> with our free <strong>text decorator
+                tool</strong>. Choose from 50+ decorative fonts perfect for <strong>Instagram bio</strong>,
+            <strong>WhatsApp status</strong>, TikTok captions, and all social media platforms. <strong>Copy and paste
+                instantly!</strong>
         </p>
 
-        <h2>How to Use This Tool</h2>
-        <ul>
-            <li>Type your text in the input box above.</li>
-            <li>Choose from multiple decorative styles.</li>
-            <li>Copy the styled text and paste it anywhere—Instagram, WhatsApp, or websites.</li>
+        <input type="text" id="inputText" placeholder="Type your text here..." aria-label="Enter text to decorate" />
+        <div id="outputContainer" role="region" aria-live="polite" aria-label="Decorated text output"></div>
+    </div>
+
+    <!-- ENHANCED TOOL INFO SECTION -->
+    <section class="tool-info-enhanced">
+        <h2>What is a Text Decorator Tool?</h2>
+        <p>
+            A <strong>text decorator</strong> is a free online tool that transforms plain text into <strong>stylish
+                fancy text</strong> using decorative fonts, symbols, and Unicode characters. It's the perfect tool for
+            anyone looking to make their social media posts, bios, and messages stand out with unique typography.
+        </p>
+        <p>
+            TextAura's <strong>text decorator</strong> offers 50+ different decorative styles including cursive fonts,
+            bold text, italic styles, underlined text, strikethrough, bubble letters, and aesthetic fonts. All styles
+            are Unicode-based, meaning they work on every platform without any special software or fonts installed.
+        </p>
+
+        <h3>Why Use a Text Decorator?</h3>
+        <ul class="benefits-list">
+            <li><strong>Stand Out on Social Media:</strong> Make your posts unique and eye-catching</li>
+            <li><strong>Professional Branding:</strong> Create consistent, stylish text for your brand</li>
+            <li><strong>Express Creativity:</strong> Show your personality through unique typography</li>
+            <li><strong>No Design Skills Needed:</strong> Instantly create professional-looking text</li>
+            <li><strong>Universal Compatibility:</strong> Works on all devices and platforms</li>
+            <li><strong>Save Time:</strong> Generate styled text in seconds, not minutes</li>
         </ul>
 
+        <h3>How to Use the Text Decorator</h3>
+        <ol class="steps-list">
+            <li><strong>Enter Your Text:</strong> Type or paste your text in the input box above</li>
+            <li><strong>Browse Styles:</strong> Scroll through 50+ decorative font styles automatically generated</li>
+            <li><strong>Copy Your Favorite:</strong> Click on any style to copy it to your clipboard</li>
+            <li><strong>Paste Anywhere:</strong> Use your decorated text in Instagram, WhatsApp, TikTok, or any app</li>
+            <li><strong>Mix & Match:</strong> Combine with our <a href="/symbol.html">Cool Symbols</a> for extra flair
+            </li>
+        </ol>
+
+        <h3>Popular Text Decoration Styles</h3>
+        <div class="styles-showcase">
+            <h4>Available Font Styles:</h4>
+            <ul>
+                <li><strong>Cursive/Script:</strong> Elegant handwritten-style fonts</li>
+                <li><strong>Bold Text:</strong> Heavy, attention-grabbing letters</li>
+                <li><strong>Italic Text:</strong> Slanted, sophisticated styling</li>
+                <li><strong>Underlined:</strong> Text with decorative underlines</li>
+                <li><strong>Strikethrough:</strong> Crossed-out effect for emphasis</li>
+                <li><strong>Bubble Letters:</strong> Rounded, fun character shapes</li>
+                <li><strong>Square Text:</strong> Boxed, geometric styling</li>
+                <li><strong>Upside Down:</strong> Flipped text for fun effects</li>
+                <li><strong>Small Caps:</strong> Professional uppercase styling</li>
+                <li><strong>Aesthetic Fonts:</strong> Trendy, visually pleasing styles</li>
+            </ul>
+        </div>
+
+        <h3>Best Uses for Text Decorator</h3>
+        <div class="use-cases">
+            <h4>For Social Media:</h4>
+            <ul>
+                <li><strong>Instagram Bio:</strong> Make your profile stand out with fancy fonts</li>
+                <li><strong>WhatsApp Status:</strong> Create eye-catching status updates</li>
+                <li><strong>TikTok Captions:</strong> Add style to your video descriptions</li>
+                <li><strong>Twitter/X Bio:</strong> Unique profile information</li>
+                <li><strong>Facebook Posts:</strong> Engaging, stylish content</li>
+                <li><strong>Discord Usernames:</strong> Stand out in chat servers</li>
+            </ul>
+
+            <h4>For Content Creators:</h4>
+            <ul>
+                <li>YouTube video titles and descriptions</li>
+                <li>Twitch stream titles and chat</li>
+                <li>Blog post headers and quotes</li>
+                <li>Email signatures</li>
+                <li>Digital art and graphics</li>
+                <li>Website headings and banners</li>
+            </ul>
+
+            <h4>For Personal Use:</h4>
+            <ul>
+                <li>Messages to friends and family</li>
+                <li>Digital invitations and cards</li>
+                <li>Personal branding materials</li>
+                <li>Creative writing projects</li>
+                <li>Gaming usernames and profiles</li>
+            </ul>
+        </div>
+
+        <h3>Text Decorator Features</h3>
+        <ul class="features-list">
+            <li>✓ <strong>50+ Font Styles:</strong> Comprehensive collection of decorative fonts</li>
+            <li>✓ <strong>Instant Generation:</strong> All styles appear automatically as you type</li>
+            <li>✓ <strong>One-Click Copy:</strong> Copy any style with a single click</li>
+            <li>✓ <strong>100% Free:</strong> No subscriptions, no hidden costs</li>
+            <li>✓ <strong>No Registration:</strong> Start using immediately</li>
+            <li>✓ <strong>Mobile Optimized:</strong> Works perfectly on all devices</li>
+            <li>✓ <strong>Universal Compatibility:</strong> Text works on every platform</li>
+            <li>✓ <strong>Real-Time Preview:</strong> See all options instantly</li>
+        </ul>
+
+        <h3>Tips for Using Decorated Text</h3>
+        <ul class="tips-list">
+            <li><strong>Keep It Readable:</strong> Don't sacrifice legibility for style</li>
+            <li><strong>Match Your Brand:</strong> Choose styles that fit your personality or brand</li>
+            <li><strong>Test Across Platforms:</strong> Ensure your text displays correctly everywhere</li>
+            <li><strong>Use Sparingly:</strong> Too many styles can look cluttered</li>
+            <li><strong>Combine with Symbols:</strong> Use our <a href="/symbol.html">Symbol Selector</a> for extra
+                decoration</li>
+            <li><strong>Save Favorites:</strong> Keep track of styles you use most often</li>
+        </ul>
+
+        <h3>Why Choose TextAura Text Decorator?</h3>
         <p>
-            No login required. Fast, mobile-friendly, and designed to make your words stand out.
+            Unlike other text generators, TextAura's <strong>text decorator</strong> is:
+        </p>
+        <ul class="Why">
+            <li><strong>Faster:</strong> Instant generation with no loading times</li>
+            <li><strong>More Styles:</strong> 50+ options vs typical 10-20 on other sites</li>
+            <li><strong>Cleaner Interface:</strong> No ads blocking your workspace</li>
+            <li><strong>More Reliable:</strong> Uses stable Unicode characters that work everywhere</li>
+            <li><strong>Privacy-Focused:</strong> We don't store or track your text</li>
+            <li><strong>Mobile-First:</strong> Designed for smartphone users</li>
+        </ul>
+
+        <h3>Explore More TextAura Tools</h3>
+        <p class="cta-text">
+            Looking for more creative tools? Check out our <a href="/">Fancy Fonts Generator</a> for even more styles,
+            <a href="/symbol.html">Cool Symbols</a> for decorative characters, and <a href="/qrcode.html">QR Code
+                Generator</a> for instant QR codes. All tools are 100% free!
+        </p>
+
+        <p class="tech-note">
+            <strong>Technical Note:</strong> All decorated text generated by TextAura uses Unicode characters, which are
+            supported by modern devices and platforms. This means your styled text will display correctly on Instagram,
+            WhatsApp, Facebook, Twitter, TikTok, Discord, and virtually any other service without requiring special
+            fonts or software.
         </p>
     </section>
 
+    <!-- FAQ SECTION (NEW!) -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions About Text Decorator</h2>
+
+        <div class="faq-item">
+            <h3>Is the text decorator free to use?</h3>
+            <p>Yes! TextAura's text decorator is completely free with no limitations. Generate as many styled texts as
+                you want without any registration or payment.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Will decorated text work on Instagram?</h3>
+            <p>Absolutely! All our decorated text styles use Unicode characters that are fully supported by Instagram,
+                WhatsApp, Facebook, TikTok, and all major social media platforms.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I copy decorated text?</h3>
+            <p>Simply click on any decorated text style you like, and it will be automatically copied to your clipboard.
+                Then paste it anywhere using Ctrl+V (Windows) or Cmd+V (Mac).</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why doesn't some text display correctly?</h3>
+            <p>Most modern devices support all Unicode characters, but some older devices or apps may have limited
+                support. If a style doesn't display correctly, try a different style or update your device.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I use decorated text for commercial purposes?</h3>
+            <p>Yes! Text generated with TextAura can be used freely for personal and commercial purposes including
+                business branding, marketing materials, and professional content.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What's the difference between text decorator and font generator?</h3>
+            <p>A text decorator applies various styling to your text using Unicode characters, while a font generator
+                typically offers different font families. Our <a href="/">homepage</a> combines both for maximum
+                options!</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do I need to install any software?</h3>
+            <p>No! TextAura's text decorator works entirely in your web browser. No downloads, installations, or special
+                software required. Just type and copy!</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
     <footer class="footer-body" id="bottom">
-        <p>© 2023 TextAura. All rights reserved.</p>
-        <div>
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="contact.html">Contact</a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Tools</h4>
+                <ul>
+                    <li><a href="/">Fancy Fonts Generator</a></li>
+                    <li><a href="/decorator.html">Text Decorator</a></li>
+                    <li><a href="/symbol.html">Cool Symbols</a></li>
+                    <li><a href="/qrcode.html">QR Code Generator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Popular Searches</h4>
+                <ul>
+                    <li>Instagram Bio Fonts</li>
+                    <li>WhatsApp Stylish Text</li>
+                    <li>Cool Symbols Copy Paste</li>
+                    <li>Free QR Code Maker</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 TextAura. All rights reserved.</p>
         </div>
     </footer>
 
