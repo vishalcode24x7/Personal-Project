@@ -169,6 +169,153 @@ select {
     list-style-type: disc;
 }
 
+/* Enhanced QR Info Section */
+.qr-info-enhanced {
+    max-width: 900px;
+    margin: 60px auto 40px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, rgba(10, 17, 40, 0.8), rgba(26, 26, 46, 0.8));
+    border-radius: 12px;
+    border: 1px solid rgba(50, 82, 89, 0.2);
+}
+
+.qr-info-enhanced h2 {
+    font-size: 28px;
+    color: #00d4ff;
+    margin-bottom: 20px;
+}
+
+.qr-info-enhanced h3 {
+    font-size: 22px;
+    color: #ff8c00;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.qr-info-enhanced h4 {
+    font-size: 18px;
+    color: #00d4ff;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.qr-info-enhanced p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.qr-info-enhanced a {
+    color: #00d4ff;
+    text-decoration: underline;
+}
+
+.qr-info-enhanced a:hover {
+    color: #ff8c00;
+}
+
+/* Lists */
+.benefits-list,
+.steps-list,
+.features-list,
+.tips-list {
+    margin: 20px 0 20px 30px;
+}
+
+.benefits-list li,
+.steps-list li,
+.features-list li,
+.tips-list li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.steps-list {
+    list-style-type: decimal;
+}
+
+/* Use Cases Section */
+.use-cases {
+    margin: 25px 0;
+    padding: 25px;
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 8px;
+}
+
+.use-cases ul {
+    margin: 15px 0 15px 25px;
+}
+
+.use-cases li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #e0e0e0;
+}
+
+/* CTA Text */
+.cta-text {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(255, 140, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid rgba(255, 140, 0, 0.3);
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Security Note */
+.security-note {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 140, 0, 0.05);
+    border-radius: 6px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    border-left: 3px solid #ff8c00;
+}
+
+/* FAQ Section */
+.faq-section {
+    max-width: 900px;
+    margin: 60px auto 40px;
+    padding: 40px 30px;
+    background: rgba(10, 17, 40, 0.6);
+    border-radius: 12px;
+}
+
+.faq-section h2 {
+    font-size: 28px;
+    color: #00d4ff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 4px solid #ff8c00;
+}
+
+.faq-item h3 {
+    font-size: 18px;
+    color: #00d4ff;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+/* ========== RESPONSIVE ========== */
+
 @media (max-width: 950px) {
     .qr-info {
         padding: 15px;
@@ -182,6 +329,26 @@ select {
     .qr-info p,
     .qr-info ul li {
         font-size: 0.95rem;
+    }
+
+    .intro-text,
+    .qr-info-enhanced,
+    .faq-section {
+        padding: 25px 20px;
+        margin: 40px 15px;
+    }
+
+    .qr-info-enhanced h2,
+    .faq-section h2 {
+        font-size: 24px;
+    }
+
+    .qr-info-enhanced h3 {
+        font-size: 20px;
+    }
+
+    .qr-info-enhanced h4 {
+        font-size: 17px;
     }
 }
 
@@ -222,5 +389,28 @@ select {
     .qr-info p,
     .qr-info ul li {
         font-size: 0.9rem;
+    }
+
+    .intro-text,
+    .qr-info-enhanced,
+    .faq-section {
+        padding: 20px 15px;
+        margin: 30px 10px;
+    }
+
+    .qr-info-enhanced h2 {
+        font-size: 22px;
+    }
+
+    .qr-info-enhanced h3 {
+        font-size: 18px;
+    }
+
+    .benefits-list,
+    .steps-list,
+    .features-list,
+    .tips-list,
+    .use-cases ul {
+        margin-left: 20px;
     }
 }
