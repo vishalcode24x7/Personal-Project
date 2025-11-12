@@ -1,6 +1,7 @@
 /* ========== FOOTER STYLES ========== */
 
 .footer-body {
+    font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
     background: linear-gradient(135deg, #0a1128 0%, #1a1a2e 100%);
     color: #ffffff;
     padding: 40px 20px 20px;

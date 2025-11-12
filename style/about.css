@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', 'Noto Sans', 'Arial', sans-serif;
   }
 
   .nav-bar span {
@@ -30,7 +29,7 @@
     margin-top: 100px;
     background-color: black;
     border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0);
+    box-shadow: 0 8px 30px rgb(0, 0, 0);
     font-family: 'Segoe UI', sans-serif;
     color: #333;
     transition: all 0.3s ease-in-out;

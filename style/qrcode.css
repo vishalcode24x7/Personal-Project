@@ -1,9 +1,9 @@
-:root {
+/* :root {
     --bcg-clr: #05203c;
     --primary-clr: #000000;
     --br-r: 8px;
     --secondry-clr: white;
-}
+} */
 
 * {
     margin: 0;
@@ -48,11 +48,10 @@ body {
 
 
 .box .container {
-    background-color: var(--primary-clr);
-    /* margin-top: 50px; */
+    background : black;
     padding: 30px;
     width: 450px;
-    border-radius: var(--br-r);
+    border-radius: 8px;
     box-shadow: 0 0 20px rgb(202, 208, 238);
     padding-top: 35px;
 }
@@ -60,7 +59,7 @@ body {
 .container h1 {
     font-size: 26px;
     text-align: center;
-    color: var(--secondry-clr);
+    color: white;
     text-transform: uppercase;
     margin-bottom: 24px;
     border-radius: 8px;
@@ -75,7 +74,7 @@ body {
 .container input,
 select {
     padding: 8px;
-    border-radius: var(--br-r);
+    border-radius: 8px;
     font-size: 18px;
     outline: none;
     border: 2px solid black;
@@ -93,7 +92,7 @@ select {
 }
 
 .container label {
-    color: var(--secondry-clr);
+    color: white;
     font-size: 20px;
 }
 
@@ -102,14 +101,14 @@ select {
 }
 
 .qr-buttons a {
-    background-color: var(--secondry-clr);
+    background-color: white;
     font-size: 20px;
     padding: 14px 40px;
     margin: 12px;
     text-decoration: none;
-    color: var(--primary-clr);
+    color: black;
     font-weight: 600;
-    border-radius: var(--br-r);
+    border-radius: 8px;
 }
 
 .qr-buttons a:hover {
@@ -124,17 +123,17 @@ select {
 
 .qr-body {
     display: grid;
-    place-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
 .qr-body img {
     max-width: 100%;
     max-height: 100%;
-    margin-block: 10px;
+    margin-top: 10px;
     padding: 20px;
     border: 2px solid rgb(174, 10, 239);
-    border-radius: var(--br-r);
+    border-radius: 8px;
 }
 
 .qr-info {
@@ -365,7 +364,7 @@ select {
     }
 
     .qr-buttons a {
-        background-color: var(--secondry-clr);
+        background-color: white;
         font-size: 20px;
         padding: 10px 20px;
     }
