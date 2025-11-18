@@ -80,7 +80,7 @@ main {
     margin-top: 80px;
     padding: 25px;
 }
-
+ 
 body main h3 {
     margin-top: 10px;
 }
@@ -118,9 +118,6 @@ body main h3 {
     list-style-type: disc;
 }
 
-/* ========== SEO CONTENT SECTIONS ========== */
-
-/* Intro Section */
 .intro-section {
     max-width: 900px;
     margin: 30px auto;
