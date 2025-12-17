@@ -89,24 +89,53 @@
         <div class="container">
             <h1>QR Code Generator</h1>
             <input type="text" placeholder="Enter your text or URL" id="qr-text">
+
             <div class="selector">
-                <label for="sizes">Select sizes</label>
+                <label for="sizes">Select size</label>
                 <select id="sizes">
-                    <option value="100">100*100</option>
-                    <option value="200">200*200</option>
-                    <option value="300">300*300</option>
+                    <option value="100">100x100</option>
+                    <option value="200">200x200</option>
+                    <option value="300">300x300</option>
                 </select>
             </div>
 
+            <div class="selector">
+                <label for="qrStyle">QR Style</label>
+                <select id="qrStyle">
+                    <option value="square">Classic Square</option>
+                    <option value="dots">Dots Style</option>
+                    <option value="rounded">Rounded</option>
+                    <option value="extra-rounded">Extra Rounded</option>
+                    <option value="classy">Classy</option>
+                </select>
+            </div>
 
-            <div class="qr-body"></div>
+            <!-- New Color Pickers -->
+            <div class="selector">
+                <label for="qrColor">QR Color</label>
+                <input type="color" id="qrColor" value="#000000">
+            </div>
+
+            <div class="selector">
+                <label for="bgColor">Background</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+
+            <div id="qr-canvas" class="qr-body"></div>
 
             <div class="qr-buttons">
-                <a href="" id="generateBtn">Generate</a>
-                <a href="" id="downloadBtn" download="QR_code.png">Download</a>
+                <a href="#" id="generateBtn">Generate</a>
+                <a href="#" id="downloadBtn" download="TextAura-Stylish-QR.png">Download</a>
+                <a href="#" id="whatsappBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white"
+                        style="vertical-align: middle; margin-right: 8px;">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.044h-.004c-1.575-.049-3.139-.398-4.529-.996l-.132-.079-3.973.5 1.012-3.901-.267-.426c-.657-.919-1.048-2.109-1.048-3.368 0-3.479 2.831-6.31 6.313-6.31 1.683.007 3.266.656 4.456 1.846 1.19 1.19 1.844 2.773 1.844 4.456 0 3.482-2.831 6.313-6.313 6.313m6.884-11.951c-1.417-1.416-3.297-2.197-5.3-2.197-4.133 0-7.504 3.371-7.504 7.504 0 1.332.352 2.626 1.023 3.766l-1.087 4.005 4.108-1.077c1.108.645 2.343.986 3.588.986 4.133 0 7.504-3.371 7.504-7.504 0-2.003-.78-3.883-2.196-5.3z" />
+                    </svg>
+                    <span class="whatsapp-text">Share on WhatsApp</span>
+                </a>
             </div>
         </div>
-
     </main>
 
     <!-- ENHANCED QR INFO SECTION -->
@@ -334,7 +363,8 @@
     </footer>
 
     <script src="script/qrcode.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> -->
+    <script src="https://unpkg.com/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
 </body>
 
 </html>

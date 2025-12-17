@@ -44,21 +44,28 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 90px;
+    margin-bottom: 200px;
 }
 
 
 .box .container {
-    background : black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
     padding: 30px;
     width: 450px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgb(202, 208, 238);
-    padding-top: 35px;
+    padding-top: 15px;
+    margin-bottom: 10px;
 }
 
 .container h1 {
-    font-size: 26px;
+    font-size: 20px;
+    padding: 5px;
     text-align: center;
+    width: 80%;
     color: white;
     text-transform: uppercase;
     margin-bottom: 24px;
@@ -68,12 +75,12 @@ body {
 
 .container input {
     width: 100%;
-    margin-top: 12px;
+    height: 50px;
 }
 
 .container input,
 select {
-    padding: 8px;
+    padding: 2px;
     border-radius: 8px;
     font-size: 18px;
     outline: none;
@@ -85,7 +92,7 @@ select {
 }
 
 .container .selector {
-    padding-top: 10px;
+    width: 99%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -102,23 +109,68 @@ select {
 
 .qr-buttons a {
     background-color: white;
-    font-size: 20px;
-    padding: 14px 40px;
-    margin: 12px;
+    font-size: 18px;
+    padding: 14px 20px;
     text-decoration: none;
     color: black;
     font-weight: 600;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .qr-buttons a:hover {
     background-color: rgb(174, 10, 239);
+    box-shadow: 0 0 10px rgb(213, 130, 213);
+    /* transform: translateY(-2px); */
 }
 
 .qr-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* WhatsApp Button - Default Disabled State */
+#whatsappBtn {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    /* Click disable */
+}
+
+#whatsappBtn svg {
+    fill: #666666;
+}
+
+#whatsappBtn .whatsapp-text {
+    color: #666666;
+}
+
+/* Active State (JS se class add hogi) */
+#whatsappBtn.active {
+    background-color: #25D366 !important;
+    color: white !important;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+#whatsappBtn.active svg {
+    fill: white;
+}
+
+#whatsappBtn.active .whatsapp-text {
+    color: white;
+}
+
+#whatsappBtn.active:hover {
+    background-color: #128C7E !important;
 }
 
 .qr-body {
@@ -359,14 +411,20 @@ select {
         width: 350px;
     }
 
-    .container #sizes {
-        margin-left: 0px;
+    .qr-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 
     .qr-buttons a {
-        background-color: white;
+        width: 80%;
+        min-width: unset;
+        padding: 12px 20px;
         font-size: 20px;
-        padding: 10px 20px;
+    }
+
+    .whatsapp-text {
+        font-size: 15px;
     }
 
     .qr-body {
@@ -412,4 +470,65 @@ select {
     .use-cases ul {
         margin-left: 20px;
     }
+}
+
+.qr-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* min-height: 200px; */
+}
+
+.qr-body canvas {
+    max-width: 100%;
+    height: auto !important;
+    border: 2px solid rgb(174, 10, 239);
+    border-radius: 8px;
+    padding: 10px;
+    background: white;
+}
+
+.container input[type="color"] {
+    width: 60px;
+    height: 40px;
+    padding: 5px;
+    border: 2px solid #a14af7;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Selector alignment fix for color inputs */
+.selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.selector label {
+    flex: 1;
+}
+
+#whatsappBtn {
+    background-color: #25D366 !important;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 20px !important;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    margin: 12px;
+    transition: all 0.3s;
+}
+
+#whatsappBtn:hover {
+    background-color: #128C7E !important;
+    transform: scale(1.05);
+}
+
+#whatsappBtn svg {
+    fill: white;
 }
