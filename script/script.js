@@ -12,8 +12,6 @@ var typed = new Typed('.auto-type', {
 const input = document.getElementById('userInput');
 const output = document.getElementById('outputFonts');
 const copyButton = document.querySelector('.copy-btn');
-
-
 const siteText = encodeURIComponent("Check out this cool font converter!");
 const siteURL = encodeURIComponent("https://textaura.org"); // ✅ Add this line
 
@@ -547,3 +545,59 @@ document.addEventListener('click', (e) => {
         navLinks.style.right = "-100%";
     }
 });
+
+const shareButtons = document.querySelector('.share-main');
+const sharecircle = document.querySelector('.share-circle');
+
+shareButtons.addEventListener('click', function (e) {
+    e.stopPropagation(); // Event bubbling rokne ke liye
+    sharecircle.classList.toggle('active'); // Toggle karenge active class
+});
+
+document.addEventListener('click', (e) => {
+    // Agar click share-wrapper ke bahar hua to close karo
+    if (!e.target.closest('.share-wrapper')) {
+        sharecircle.classList.remove('active');
+    }
+});
+
+// Share circle ke buttons pe click karne ke baad bhi close ho
+sharecircle.addEventListener('click', function (e) {
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') {
+        setTimeout(() => {
+            sharecircle.classList.remove('active');
+        }, 200); // Thoda delay for better UX
+    }
+});
+
+// Share function
+function shareTo(platform) {
+    const url = window.location.href;
+    const text = 'Check out Textaura.org!'; // Website naam ke saath message
+
+    let link = '';
+
+    if (platform === 'whatsapp') {
+        link = `https://wa.me/?text=${text} ${url}`;
+    } else if (platform === 'telegram') {
+        link = `https://t.me/share/url?url=${url}&text=${text}`;
+    } else if (platform === 'instagram') {
+        copyLink();
+        alert('Link copied! Paste in Instagram');
+        return;
+    }
+
+    window.open(link, '_blank');
+    sharecircle.classList.remove('active');
+}
+
+// Copy link function
+function copyLink() {
+    const url = window.location.href;
+
+    navigator.clipboard.writeText(url).then(() => {
+        alert('✓ Textaura.org link copied!');
+    });
+
+    sharecircle.classList.remove('active');
+}

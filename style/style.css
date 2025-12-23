@@ -182,7 +182,7 @@ a.button:hover {
     background-color: #000000;
 }
 
-.share-wrapper {
+.share-wrapper {  /* Yahan dot add kiya */
     position: fixed;
     bottom: 30px;
     right: 80px;
@@ -205,6 +205,11 @@ a.button:hover {
     background: rgb(42, 206, 24);
     border-radius: 50%;
     text-align: center;
+    transition: transform 0.2s ease;  /* Ye add kiya */
+}
+
+.share-main:hover {
+    transform: scale(1.1);  /* Hover effect share button pe bhi */
 }
 
 .share-circle {
@@ -222,10 +227,10 @@ a.button:hover {
     opacity: 0;
     pointer-events: none;
     z-index: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;  /* Transform transition add kiya */
 }
 
-.share-wrapper:hover .share-circle {
+.share-circle.active {  /* Active class ke liye CSS */
     opacity: 1;
     pointer-events: auto;
 }
@@ -244,7 +249,7 @@ a.button:hover {
 
 .share-circle button:hover {
     transform: scale(1.2);
-    z-index: 1;
+    background: #555;  /* Hover pe thoda color change bhi */
 }
 
 #faq-section {
