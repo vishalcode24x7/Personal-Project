@@ -566,7 +566,7 @@ async function shareTo(platform) {
     const url = window.location.href;
     const title = 'Textaura.org';
     const text = 'Check out Textaura.org! 🌟';
-    
+
     // Mobile native share API check (works on WhatsApp, Telegram, Instagram etc)
     if (navigator.share) {
         try {
@@ -582,12 +582,12 @@ async function shareTo(platform) {
             console.log('Share cancelled or failed');
         }
     }
-    
+
     // Fallback for desktop or specific platform
     const encodedUrl = encodeURIComponent(url);
     const encodedText = encodeURIComponent(text);
     let link = '';
-    
+
     if (platform === 'whatsapp') {
         link = `https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`;
     } else if (platform === 'telegram') {
@@ -597,7 +597,7 @@ async function shareTo(platform) {
         alert('📋 Link copied! Paste in Instagram');
         return;
     }
-    
+
     window.open(link, '_blank');
     sharecircle.classList.remove('active');
 }
@@ -605,7 +605,7 @@ async function shareTo(platform) {
 // Copy link function
 function copyLink() {
     const url = window.location.href;
-    
+
     if (navigator.clipboard) {
         navigator.clipboard.writeText(url).then(() => {
             alert('✓ Textaura.org link copied!');
@@ -617,6 +617,12 @@ function copyLink() {
         // Old browser fallback
         prompt('Copy this link:', url);
     }
-    
+
     sharecircle.classList.remove('active');
 }
+
+// Event listeners
+document.getElementById('whatsapp-btn').addEventListener('click', () => shareTo('whatsapp'));
+document.getElementById('telegram-btn').addEventListener('click', () => shareTo('telegram'));
+document.getElementById('instagram-btn').addEventListener('click', () => shareTo('instagram'));
+document.getElementById('copy-btn').addEventListener('click', copyLink);
