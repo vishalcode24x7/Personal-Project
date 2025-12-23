@@ -598,7 +598,7 @@ async function shareTo(platform) {
         return;
     }
 
-    window.open(link, '_blank');
+    // window.open(link, '_blank');
     sharecircle.classList.remove('active');
 }
 
