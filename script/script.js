@@ -561,32 +561,43 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Share circle ke buttons pe click karne ke baad bhi close ho
-sharecircle.addEventListener('click', function (e) {
-    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'IMG') {
-        setTimeout(() => {
-            sharecircle.classList.remove('active');
-        }, 200); // Thoda delay for better UX
-    }
-});
-
-// Share function
-function shareTo(platform) {
+// Share function with Web Share API
+async function shareTo(platform) {
     const url = window.location.href;
-    const text = 'Check out Textaura.org!'; // Website naam ke saath message
-
+    const title = 'Textaura.org';
+    const text = 'Check out Textaura.org! 🌟';
+    
+    // Mobile native share API check (works on WhatsApp, Telegram, Instagram etc)
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: title,
+                text: text,
+                url: url
+            });
+            sharecircle.classList.remove('active');
+            return;
+        } catch (err) {
+            // Agar user cancel kare ya error aaye to fallback
+            console.log('Share cancelled or failed');
+        }
+    }
+    
+    // Fallback for desktop or specific platform
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(text);
     let link = '';
-
+    
     if (platform === 'whatsapp') {
-        link = `https://wa.me/?text=${text} ${url}`;
+        link = `https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`;
     } else if (platform === 'telegram') {
-        link = `https://t.me/share/url?url=${url}&text=${text}`;
+        link = `https://t.me/share/url?url=${encodedUrl}&text=${encodedText}`;
     } else if (platform === 'instagram') {
         copyLink();
-        alert('Link copied! Paste in Instagram');
+        alert('📋 Link copied! Paste in Instagram');
         return;
     }
-
+    
     window.open(link, '_blank');
     sharecircle.classList.remove('active');
 }
@@ -594,10 +605,18 @@ function shareTo(platform) {
 // Copy link function
 function copyLink() {
     const url = window.location.href;
-
-    navigator.clipboard.writeText(url).then(() => {
-        alert('✓ Textaura.org link copied!');
-    });
-
+    
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+            alert('✓ Textaura.org link copied!');
+        }).catch(() => {
+            // Fallback prompt
+            prompt('Copy this link:', url);
+        });
+    } else {
+        // Old browser fallback
+        prompt('Copy this link:', url);
+    }
+    
     sharecircle.classList.remove('active');
 }
