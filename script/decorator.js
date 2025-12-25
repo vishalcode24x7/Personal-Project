@@ -52,7 +52,8 @@ const styles = [
     { wrap: txt => toBoldUnicode(`૮₍ ´• ˕ • ₎ა ${txt} ૮₍ ´• ˕ • ₎ა`) },
     { wrap: txt => toBoldUnicode(`(≧◡≦) ${txt} (≧◡≦)`) },
     { wrap: txt => toBoldUnicode(`✩ ${txt} ✩`) },
-    { wrap: txt => toBoldUnicode(`[ ${txt} ]`) }
+    { wrap: txt => toBoldUnicode(`[ ${txt} ]`) },
+    { wrap: txt => toBoldUnicode(`.•°¤*(¯\`★´¯)*¤°   🎀  ${txt}  🎀   °¤*)¯´★\`¯(*¤°•.`) }
 ];
 
 function renderDecorations(text) {

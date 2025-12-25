@@ -357,20 +357,6 @@ const fontStyles = {
 
     Inverted: str => [...str].reverse().join(''),
 
-    FireFont: str => str.split('').map(c => '🔥' + c).join(''),
-
-    cuteFont: str => {
-        const emojis = ['💖', '🌸', '🐾', '🍭', '✨', '🧸'];
-        return str.split('').map(c => c + emojis[Math.floor(Math.random() * emojis.length)]).join('');
-    },
-
-    sparkleFont: str => str.split('').map(c => c + '✨').join(''),
-
-    darkFont: str => {
-        const symbols = ['☠️', '🕷️', '🩸', '🪦', '⚰️', '🧛'];
-        return str.split('').map(c => symbols[Math.floor(Math.random() * symbols.length)] + c).join('');
-    },
-
     slashyFont: str => str.split('').map(c => `/${c}/`).join(''),
 
     upsideDown: str => {
@@ -397,63 +383,611 @@ const fontStyles = {
         return str.split('').map(c => c + marks.join('')).join('');
     },
 
-    royalSparkle: str => `.•°¤*(¯\`★´¯)*¤°   🎀  ${str}  🎀   °¤*)¯´★\`¯(*¤°•.`,
+    BoldUnderlined: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0332';
+    }),
 
-    sweetFrost: str => `🍧  🎀  ${str}  🎀  🍧`,
+    ItalicUnderlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c === 'h') result = 'ℎ';
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D434 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D44E + (code - 97));
+        return result + '\u0332';
+    }),
 
-    peacefulSafari: str => `🐘 ⋆ 🕊  🎀  ${str}  🎀  🕊 ⋆ 🐘`,
+    GothicText: str => str.replace(/[A-Za-z]/g, c => {
+        const gothic = {
+            A: '𝔄', B: '𝔅', C: 'ℭ', D: '𝔇', E: '𝔈', F: '𝔉',
+            G: '𝔊', H: 'ℌ', I: 'ℑ', J: '𝔍', K: '𝔎', L: '𝔏',
+            M: '𝔐', N: '𝔑', O: '𝔒', P: '𝔓', Q: '𝔔', R: 'ℜ',
+            S: '𝔖', T: '𝔗', U: '𝔘', V: '𝔙', W: '𝔚', X: '𝔛',
+            Y: '𝔜', Z: 'ℨ',
+            a: '𝔞', b: '𝔟', c: '𝔠', d: '𝔡', e: '𝔢', f: '𝔣',
+            g: '𝔤', h: '𝔥', i: '𝔦', j: '𝔧', k: '𝔨', l: '𝔩',
+            m: '𝔪', n: '𝔫', o: '𝔬', p: '𝔭', q: '𝔮', r: '𝔯',
+            s: '𝔰', t: '𝔱', u: '𝔲', v: '𝔳', w: '𝔴', x: '𝔵',
+            y: '𝔶', z: '𝔷'
+        };
+        return gothic[c] || c;
+    }),
 
-    cookieCrumble: str => `🍫 ⋆ 🍪  🎀  ${str}  🎀  🍪 ⋆ 🍫`,
+    BoldItalicUnderlined: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D468 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D482 + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0332';
+    }),
 
-    minimalGlow: str => `✳  🎀  ${str}  🎀  ✳`,
+    BoldDoubleUnderlined: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0333';
+    }),
 
-    retroBeast: str => `♛😺  ${str}  🐊♗`,
+    ItalicOverlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c === 'h') result = 'ℎ';
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D434 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D44E + (code - 97));
+        return result + '\u0305';
+    }),
 
-    mysticCrown: str => `♚ඏ  ${str}  ☆♧`,
+    BoldOverlined: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0305';
+    }),
 
-    oceanBreeze: str => `🎀⛵  ${str}  🐧🎉`,
+    BoldStrikethrough: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0336';
+    }),
 
-    warriorCode: str => `✊☆  ${str}  ♗♖`,
+    ItalicStrikethrough: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c === 'h') result = 'ℎ';
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D434 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D44E + (code - 97));
+        return result + '\u0336';
+    }),
 
-    winterChampion: str => `🐼🏆  ${str}  🐲🎄`,
+    BoldItalicStrikethrough: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D468 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D482 + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0336';
+    }),
 
-    glitchwave: str => `▀▄▀▄▀▄ ${str} ▄▀▄▀▄▀`,
 
-    jungleByte: str => `🐠🐍  ${str}  ♔👮`,
+    ScriptUnderlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'B': 'ℬ', 'E': 'ℰ', 'F': 'ℱ', 'H': 'ℋ',
+            'I': 'ℐ', 'L': 'ℒ', 'R': 'ℛ',
+            'g': 'ℊ', 'o': 'ℴ', 'e': '𝑒', 'h': 'ℎ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D49C + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D4B6 + (code - 97));
+        return result + '\u0332';
+    }),
 
-    chillRebel: str => `♩😾  ${str}  ✌🍮`,
+    ScriptOverlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'B': 'ℬ', 'E': 'ℰ', 'F': 'ℱ', 'H': 'ℋ',
+            'I': 'ℐ', 'L': 'ℒ', 'R': 'ℛ',
+            'g': 'ℊ', 'o': 'ℴ', 'e': '𝑒', 'h': 'ℎ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D49C + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D4B6 + (code - 97));
+        return result + '\u0305';
+    }),
 
-    dreamcore: str => `°°°·.°·..·°¯°·._.· ${str} ·._.·°¯°·.·° .·°°°`,
+    FrakturUnderlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'C': 'ℭ', 'H': 'ℌ', 'I': 'ℑ', 'R': 'ℜ', 'Z': 'ℨ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D504 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D51E + (code - 97));
+        return result + '\u0332';
+    }),
 
-    darkPulse: str => `😾☟  ${str}  ♞😈`,
+    FrakturStrikethrough: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'C': 'ℭ', 'H': 'ℌ', 'I': 'ℑ', 'R': 'ℜ', 'Z': 'ℨ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D504 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D51E + (code - 97));
+        return result + '\u0336';
+    }),
 
-    technoSpice: str => `🧬⌁⌁ ${str} ⌁⌁🧬`,
+    GreekStyle: str => str.replace(/[A-Za-z]/g, c => {
+        const greek = {
+            A: 'Α', B: 'Β', C: 'Ϲ', D: 'Δ', E: 'Ε', F: 'Ϝ',
+            G: 'Γ', H: 'Η', I: 'Ι', J: 'Ј', K: 'Κ', L: 'Λ',
+            M: 'Μ', N: 'Ν', O: 'Ο', P: 'Ρ', Q: 'Ϙ', R: 'Ʀ',
+            S: 'Σ', T: 'Τ', U: 'Υ', V: 'Ѵ', W: 'Ω', X: 'Χ',
+            Y: 'Υ', Z: 'Ζ',
+            a: 'α', b: 'β', c: 'ς', d: 'δ', e: 'ε', f: 'ϝ',
+            g: 'γ', h: 'η', i: 'ι', j: 'ј', k: 'κ', l: 'λ',
+            m: 'μ', n: 'ν', o: 'ο', p: 'ρ', q: 'ϙ', r: 'ʀ',
+            s: 'σ', t: 'τ', u: 'υ', v: 'ν', w: 'ω', x: 'χ',
+            y: 'ψ', z: 'ζ'
+        };
+        return greek[c] || c;
+    }),
 
-    ghostCircuit: str => `👻⚙️⛓️ ${str} ⛓️⚙️👻`,
+    
 
-    animeRush: str => `🌆💨『 ${str} 』💨🌆`,
+    BoldFrakturUnderlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D56C + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D586 + (code - 97));
+        return result + '\u0332';
+    }),
 
-    pixelWhirl: str => `🌀▣▣ ${str} ▣▣🌀`,
+    BoldScriptUnderlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D4D0 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D4EA + (code - 97));
+        return result + '\u0332';
+    }),
 
-    lavaTwist: str => `🌋🔥⤴️ ${str} ⤵️🔥🌋`,
+    DoubleCircled: str => str.replace(/[1-9]/g, c => {
+        const dblCirc = {
+            '1': '⓵', '2': '⓶', '3': '⓷', '4': '⓸', '5': '⓹',
+            '6': '⓺', '7': '⓻', '8': '⓼', '9': '⓽', '0': '⓪'
+        };
+        return dblCirc[c] || c;
+    }),
 
-    zenGarden: str => `🍃🧘‍♂️ ~ ${str} ~ 🧘‍♀️🍃`,
+    DoubleStruckUnderlined: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const patches = {
+            'C': 'ℂ', 'H': 'ℍ', 'N': 'ℕ', 'P': 'ℙ',
+            'Q': 'ℚ', 'R': 'ℝ', 'Z': 'ℤ'
+        };
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D538 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D552 + (code - 97));
+        else if (c >= '0' && c <= '9') result = String.fromCodePoint(0x1D7D8 + (code - 48));
+        return result + '\u0332';
+    }),
 
-    cyberKnight: str => `🛡️⚔️ ${str} ⚔️🛡️`,
+    MonoUnderlined: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D670 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D68A + (code - 97));
+        else if (c >= '0' && c <= '9') result = String.fromCodePoint(0x1D7F6 + (code - 48));
+        return result + '\u0332';
+    }),
 
-    bubblePop: str => `🫧🎈 ${str} 🎈🫧`,
+    SansSerifBoldUnderlined: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D5D4 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D5EE + (code - 97));
+        else if (c >= '0' && c <= '9') result = String.fromCodePoint(0x1D7EC + (code - 48));
+        return result + '\u0332';
+    }),
 
-    twilightEcho: str => `🌒🔮 ${str} 🔮🌘`,
+    SansSerifItalicUnderlined: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D608 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D622 + (code - 97));
+        return result + '\u0332';
+    }),
 
-    rainbowPixel: str => `🌈🧁 ${str} 🧁🌈`,
+    BoldWithDots: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0307';
+    }),
 
-    vaporSoul: str => `🌫️💿 ${str} 💿🌫️`,
+    ItalicWithDots: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c === 'h') result = 'ℎ';
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D434 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D44E + (code - 97));
+        return result + '\u0307';
+    }),
 
-    crystalNova: str => `💎✨ ${str} ✨💎`,
+    BoldWithRing: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u030A';
+    }),
 
-    stormRider: str => `🌪️⚡ ${str} ⚡🌪️`,
+    ItalicWithTilde: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c === 'h') result = 'ℎ';
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D434 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D44E + (code - 97));
+        return result + '\u0303';
+    }),
 
-    arcadeDream: str => `🕹️👾 ${str} 👾🕹️`,
+    BoldWithTilde: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0303';
+    }),
+
+    ScriptWithDots: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'B': 'ℬ', 'E': 'ℰ', 'F': 'ℱ', 'H': 'ℋ',
+            'I': 'ℐ', 'L': 'ℒ', 'R': 'ℛ',
+            'g': 'ℊ', 'o': 'ℴ', 'e': '𝑒', 'h': 'ℎ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D49C + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D4B6 + (code - 97));
+        return result + '\u0307';
+    }),
+
+    FrakturWithDots: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'C': 'ℭ', 'H': 'ℌ', 'I': 'ℑ', 'R': 'ℜ', 'Z': 'ℨ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D504 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D51E + (code - 97));
+        return result + '\u0307';
+    }),
+
+    BoldItalicWithDots: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D468 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D482 + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0307';
+    }),
+
+    WavyText: str => str.split('').map((c, i) => 
+        i % 2 === 0 ? c.toUpperCase() : c.toLowerCase()
+    ).join(''),
+     
+    SentenceCase: str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase(),
+
+    BoldItalicWithTilde: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D468 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D482 + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return result + '\u0303';
+    }),
+
+    BoldWideSpaced: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D400 + (code - 65)) + '　';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D41A + (code - 97)) + '　';
+        else if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48)) + '　';
+        return c + '　';
+    }).trim(),
+
+    ItalicWideSpaced: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c === 'h') return 'ℎ' + '　';
+        else if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D434 + (code - 65)) + '　';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D44E + (code - 97)) + '　';
+        return c + '　';
+    }).trim(),
+
+    BoldSpaced: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D400 + (code - 65)) + ' ';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D41A + (code - 97)) + ' ';
+        else if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48)) + ' ';
+        return c + ' ';
+    }).trim(),
+
+    ItalicSpaced: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c === 'h') return 'ℎ' + ' ';
+        else if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D434 + (code - 65)) + ' ';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D44E + (code - 97)) + ' ';
+        return c + ' ';
+    }).trim(),
+
+    ScriptSpaced: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'B': 'ℬ', 'E': 'ℰ', 'F': 'ℱ', 'H': 'ℋ',
+            'I': 'ℐ', 'L': 'ℒ', 'R': 'ℛ',
+            'g': 'ℊ', 'o': 'ℴ', 'e': '𝑒', 'h': 'ℎ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D49C + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D4B6 + (code - 97));
+        return result + ' ';
+    }).trim(),
+
+    FrakturSpaced: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'C': 'ℭ', 'H': 'ℌ', 'I': 'ℑ', 'R': 'ℜ', 'Z': 'ℨ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D504 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D51E + (code - 97));
+        return result + ' ';
+    }).trim(),
+
+    BoldDashed: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D400 + (code - 65)) + '-';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D41A + (code - 97)) + '-';
+        else if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48)) + '-';
+        return c + '-';
+    }).slice(0, -1),
+
+    ItalicDashed: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c === 'h') return 'ℎ' + '-';
+        else if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D434 + (code - 65)) + '-';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D44E + (code - 97)) + '-';
+        return c + '-';
+    }).slice(0, -1),
+
+    BoldDotted: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D400 + (code - 65)) + '·';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D41A + (code - 97)) + '·';
+        else if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48)) + '·';
+        return c + '·';
+    }).slice(0, -1),
+
+    ItalicDotted: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c === 'h') return 'ℎ' + '·';
+        else if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D434 + (code - 65)) + '·';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D44E + (code - 97)) + '·';
+        return c + '·';
+    }).slice(0, -1),
+
+    BoldSlashed: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D400 + (code - 65)) + '/';
+        else if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D41A + (code - 97)) + '/';
+        else if (code >= 48 && code <= 57) return String.fromCodePoint(0x1D7CE + (code - 48)) + '/';
+        return c + '/';
+    }).slice(0, -1),
+
+    BoldBoxed: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return '[' + result + ']';
+    }),
+
+    ItalicBoxed: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c === 'h') result = 'ℎ';
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D434 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D44E + (code - 97));
+        return '[' + result + ']';
+    }),
+
+    BoldParenthesized: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return '(' + result + ')';
+    }),
+
+    ItalicParenthesized: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c === 'h') result = 'ℎ';
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D434 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D44E + (code - 97));
+        return '(' + result + ')';
+    }),
+
+    BoldAngled: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D400 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D41A + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return '<' + result + '>';
+    }),
+
+    ScriptBoxed: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'B': 'ℬ', 'E': 'ℰ', 'F': 'ℱ', 'H': 'ℋ',
+            'I': 'ℐ', 'L': 'ℒ', 'R': 'ℛ',
+            'g': 'ℊ', 'o': 'ℴ', 'e': '𝑒', 'h': 'ℎ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D49C + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D4B6 + (code - 97));
+        return '[' + result + ']';
+    }),
+
+    FrakturBoxed: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        const patches = {
+            'C': 'ℭ', 'H': 'ℌ', 'I': 'ℑ', 'R': 'ℜ', 'Z': 'ℨ'
+        };
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D504 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D51E + (code - 97));
+        return '[' + result + ']';
+    }),
+
+    BoldItalicBoxed: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D468 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D482 + (code - 97));
+        else if (code >= 48 && code <= 57) result = String.fromCodePoint(0x1D7CE + (code - 48));
+        return '[' + result + ']';
+    }),
+
+    MonoSpaced: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D670 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D68A + (code - 97));
+        else if (c >= '0' && c <= '9') result = String.fromCodePoint(0x1D7F6 + (code - 48));
+        return result + ' ';
+    }).trim(),
+
+    MonoDashed: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D670 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D68A + (code - 97));
+        else if (c >= '0' && c <= '9') result = String.fromCodePoint(0x1D7F6 + (code - 48));
+        return result + '-';
+    }).slice(0, -1),
+
+    DoubleStruckSpaced: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const patches = {
+            'C': 'ℂ', 'H': 'ℍ', 'N': 'ℕ', 'P': 'ℙ',
+            'Q': 'ℚ', 'R': 'ℝ', 'Z': 'ℤ'
+        };
+        const code = c.charCodeAt(0);
+        let result = c;
+        if (patches[c]) result = patches[c];
+        else if (c >= 'A' && c <= 'Z') result = String.fromCodePoint(0x1D538 + (code - 65));
+        else if (c >= 'a' && c <= 'z') result = String.fromCodePoint(0x1D552 + (code - 97));
+        else if (c >= '0' && c <= '9') result = String.fromCodePoint(0x1D7D8 + (code - 48));
+        return result + ' ';
+    }).trim(),
+
+    SansSerif: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D5A0 + (code - 65));
+        if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D5BA + (code - 97));
+        if (c >= '0' && c <= '9') return String.fromCodePoint(0x1D7E2 + (code - 48));
+        return c;
+    }),
+
+    VerticalText: str => str.split('').join('\n'),
+
+    SansSerifBold: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D5D4 + (code - 65));
+        if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D5EE + (code - 97));
+        if (c >= '0' && c <= '9') return String.fromCodePoint(0x1D7EC + (code - 48));
+        return c;
+    }),
+
+    SansSerifItalic: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D608 + (code - 65));
+        if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D622 + (code - 97));
+        return c;
+    }),
+
+    SansSerifBoldItalic: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.charCodeAt(0);
+        if (c >= 'A' && c <= 'Z') return String.fromCodePoint(0x1D63C + (code - 65));
+        if (c >= 'a' && c <= 'z') return String.fromCodePoint(0x1D656 + (code - 97));
+        return c;
+    }),
+
+    CircledNegative: str => str.replace(/[A-Za-z0-9]/g, c => {
+        const patches = {
+            '0': '⓿', '1': '❶', '2': '❷', '3': '❸', '4': '❹',
+            '5': '❺', '6': '❻', '7': '❼', '8': '❽', '9': '❾',
+            A: '🅐', B: '🅑', C: '🅒', D: '🅓', E: '🅔', F: '🅕',
+            G: '🅖', H: '🅗', I: '🅘', J: '🅙', K: '🅚', L: '🅛',
+            M: '🅜', N: '🅝', O: '🅞', P: '🅟', Q: '🅠', R: '🅡',
+            S: '🅢', T: '🅣', U: '🅤', V: '🅥', W: '🅦', X: '🅧',
+            Y: '🅨', Z: '🅩'
+        };
+        return patches[c.toUpperCase()] || c;
+    }),
+
+    ParenthesizedLatin: str => str.replace(/[a-z]/g, c => {
+        const code = c.charCodeAt(0);
+        return String.fromCodePoint(0x249C + (code - 97));
+    }),
+
+    RegionalIndicator: str => str.replace(/[A-Za-z]/g, c => {
+        const code = c.toUpperCase().charCodeAt(0);
+        return String.fromCodePoint(0x1F1E6 + (code - 65));
+    }),
+
+    FireFont: str => str.split('').map(c => '🔥' + c).join(''),
+
+    cuteFont: str => {
+        const emojis = ['💖', '🌸', '🐾', '🍭', '✨', '🧸'];
+        return str.split('').map(c => c + emojis[Math.floor(Math.random() * emojis.length)]).join('');
+    },
+
+    sparkleFont: str => str.split('').map(c => c + '✨').join(''),
+
+    darkFont: str => {
+        const symbols = ['☠️', '🕷️', '🩸', '🪦', '⚰️', '🧛'];
+        return str.split('').map(c => symbols[Math.floor(Math.random() * symbols.length)] + c).join('');
+    }
 }
 
 
